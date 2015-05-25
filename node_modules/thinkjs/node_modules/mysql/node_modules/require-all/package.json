@@ -1,0 +1,63 @@
+{
+  "author": {
+    "name": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/"
+  },
+  "name": "require-all",
+  "description": "An easy way to require all files within a directory.",
+  "version": "0.0.8",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/felixge/node-require-all.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/felixge/node-require-all/blob/master/License"
+    }
+  ],
+  "main": "./index",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "semver": "~2.1.0"
+  },
+  "optionalDependencies": {},
+  "bugs": {
+    "url": "https://github.com/felixge/node-require-all/issues"
+  },
+  "_id": "require-all@0.0.8",
+  "dist": {
+    "shasum": "a7d4307d90e422fcb9f04af018c149920074e4b3",
+    "tarball": "http://registry.npmjs.org/require-all/-/require-all-0.0.8.tgz"
+  },
+  "_from": "require-all@0.0.8",
+  "_npmVersion": "1.2.32",
+  "_npmUser": {
+    "name": "dscape",
+    "email": "nunojobpinto@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "felixge",
+      "email": "felix@debuggable.com"
+    },
+    {
+      "name": "thlorenz",
+      "email": "thlorenz@gmx.de"
+    },
+    {
+      "name": "dscape",
+      "email": "nunojobpinto@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "a7d4307d90e422fcb9f04af018c149920074e4b3",
+  "_resolved": "https://registry.npmjs.org/require-all/-/require-all-0.0.8.tgz"
+}
