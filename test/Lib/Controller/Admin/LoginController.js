@@ -7,10 +7,10 @@ module.exports = Controller("Admin/BaseController", function() {
 	return {
 		indexAction: function() {
 			//render View/Admin/login_index.html file
-			return this.display();
+			this.display();
 		},
-		ajaxLoginAction: function() {
-
+		ajaxloginAction: function() {
+			// TODO ajax登陆
 		},
 		loseAction: function() {
 			//TODO 退出

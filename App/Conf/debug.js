@@ -2,13 +2,12 @@ module.exports = {
 	//配置项: 配置值
 	port: 8360, //监听的端口
 	db_type: 'mysql', // 数据库类型
-	db_host: '127.0.0.1', // 服务器地址
-	db_port: '', // 端口
-	db_name: 'jcms', // 数据库名
+	db_host: 'localhost', // 服务器地址
+	db_port: 3306, // 端口
+	db_name: 'nodecms', // 数据库名
 	db_user: 'root', // 用户名
 	db_pwd: '', // 密码
-	db_prefix: 'jcms', // 数据库表前缀
-
+	db_prefix:false,
 
 	//日志部分
 	log_console: false, //是否记录日志，开启后会重写console.error等系列方法

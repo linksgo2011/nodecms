@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?=lang('system_name')?><?=lang('system_version')?> - <?=lang('system_author')?></title>
+<title><%=lang('system_name')%><%=lang('system_version')%> - <%=lang('system_author')%></title>
 <style>
 body {margin: 0;padding: 0;background:#E2E9EA ;cursor: E-resize;}
 </style>
@@ -16,12 +16,12 @@ function toggleMenu()
   if (frmBody.cols == "0, 12, *,12")
   {
     frmBody.cols="150, 12, *,12";
-    imgArrow.src = "<?=base_url()?>images/admin_barclose.gif";
+    imgArrow.src = "<%=base_url()%>resource/images/admin_barclose.gif";
   }
   else
   {
     frmBody.cols="0, 12, *,12";
-    imgArrow.src = "<?=base_url()?>images/admin_baropen.gif";
+    imgArrow.src = "<%=base_url()%>resource/images/admin_baropen.gif";
   }
 }
 
@@ -66,6 +66,6 @@ Utils.fixEvent = function(e)
 </head>
 <body onselect="return false;">
 <table height="100%" cellspacing="0" cellpadding="0" id="tbl">
-  <tr><td style="padding-left:1px;"><a href="javascript:toggleMenu();"><img src="<?=base_url()?>images/admin_barclose.gif" width="11" height="60" id="img" border="0"  /></a></td></tr>
+  <tr><td style="padding-left:1px;"><a href="javascript:toggleMenu();"><img src="<%=base_url()%>resource/images/admin_barclose.gif" width="11" height="60" id="img" border="0"  /></a></td></tr>
 </table>
 </body></html>

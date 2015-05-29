@@ -1,0 +1,46 @@
+<% include admin_head.html %>
+<style>body{height:100%;background:#E2E9EA;}</style>
+<div id="main_top">
+	<div id="header" class="header" >
+		<table width="100%" height="80" border="0" cellpadding="0" cellspacing="1">
+			<tr><td rowspan="2" width="150"><div class="logo"><a href="<%=base_url()%>" target="_blank"><img src="<%=base_url()%>resource/images/x6cms.gif" width=150></a></div></td>
+			<td height="40">
+				<div class="nav">&nbsp;&nbsp;&nbsp;&nbsp;<%=lang('welcome')%>
+					<!-- TODO -->
+					admin
+					<i></i> [<a href="<%=site_aurl('main/logout')%>" target="_top"><%=lang('logout')%></a>]
+				</div>
+			</td>
+			<td align="right">
+				<div class="nav">
+					<a href="<%=base_url()%>" target="_blank"><%=lang('browse_site')%></a>
+					<i>|</i>
+					<a href="http://bbs.x6cms.com" target="_blank"><%=lang('x6cms_bbs')%></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+				<div class="topmenu">
+					<ul>
+						<li onclick="setLeft(32);return false;"><span class="topmenufunc current" id="topmenufunc_32"><b>个人中心</b></span></li>
+						<li onclick="setLeft(5);return false;"><span class="topmenufunc" id="topmenufunc_5"><b>内容管理</b></span></li>
+						<li onclick="setLeft(7);return false;"><span class="topmenufunc" id="topmenufunc_7"><b>SEO优化</b></span></li>
+						<li onclick="setLeft(6);return false;"><span class="topmenufunc" id="topmenufunc_6"><b>模块管理</b></span></li>
+						<li onclick="setLeft(1);return false;"><span class="topmenufunc" id="topmenufunc_1"><b>系统管理</b></span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+<script type="text/javascript">
+function setLeft(tid){
+	parent.menu.setTab(tid);
+	$(".topmenufunc").removeClass('current');
+	$("#topmenufunc_"+tid).addClass('current');
+}
+</script>
+<% include admin_foot.html %>
