@@ -1,0 +1,14 @@
+body {
+  direction: ltr; /* special value swap */
+  float: left; /* basic value swap */
+  margin-left: 2px; /* basic property swap */
+  padding: 1px 2px 3px 4px; /* quad swap */
+  right: 5px; /* basic property swap */
+}
+div {
+  text-align: right; /* value swap */
+  margin-right: 5px !important; /* property swap and keeps !important */
+  float: right!important; /* changes to float:left!important */
+  color: blue; /* don't mess with normal properties */
+  font-family: helvetica !important; /* put back important on normal properties */
+}

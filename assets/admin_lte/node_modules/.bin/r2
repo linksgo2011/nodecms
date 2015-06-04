@@ -1,0 +1,15 @@
+#!/bin/sh
+basedir=`dirname "$0"`
+
+case `uname` in
+    *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+if [ -x "$basedir/node" ]; then
+  "$basedir/node"  "$basedir/../R2/bin/r2" "$@"
+  ret=$?
+else 
+  node  "$basedir/../R2/bin/r2" "$@"
+  ret=$?
+fi
+exit $ret
