@@ -420,6 +420,12 @@ function _init() {
         e.preventDefault();
       }
     });
+    $(function(){
+      if(typeof _config !== "undefined" && _config.purview && _config.parent_purview){
+          $("[data-name='"+$.trim(_config.parent_purview)+"']",$(menu)).parent().addClass('active');
+          $("[data-name='"+$.trim(_config.purview)+"']",$(menu)).parent().addClass('active');
+      }
+    });
   };
 
   /* ControlSidebar

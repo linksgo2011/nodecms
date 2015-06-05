@@ -186,77 +186,76 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">主要功能</li>
-                        <li class="active treeview">
-                            <a href="#">
+                        <li class="treeview">
+                            <a href="#" data-name="personal">
                                 <i class="fa fa-dashboard"></i> <span>个人中心</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="/admin/main/index"><i class="fa fa-circle-o"></i> 后台首页</a></li>
-                                <li><a href="/admin/user/password"><i class="fa fa-circle-o text-aqua"></i> 修改密码</a></li>
-                                <li><a href="/admin/user/profile"><i class="fa fa-circle-o text-yellow"></i> 个人资料</a></li>
+                                <li><a data-name="adminindex" href="/admin/main/index"><i class="fa fa-circle-o"></i> 后台首页</a></li>
+                                <li><a data-name="profile" href="/admin/user/password"><i class="fa fa-circle-o text-aqua"></i> 修改密码</a></li>
+                                <li><a data-name="propass" href="/admin/user/profile"><i class="fa fa-circle-o text-yellow"></i> 个人资料</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="#">
+                            <a href="#" data-name="content">
                                 <i class="fa fa-files-o"></i>
                                 <span>内容管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 栏目管理</a></li>
-                                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 文章模型</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 产品模型</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 问答模型</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 下载模型</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 招聘模型</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 留言管理</a></li>
-                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 推荐位设置</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i> 模型管理</a></li>
+                                <li><a data-name="category" href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 栏目管理</a></li>
+                                <li><a data-name="article" href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 文章模型</a></li>
+                                <li><a data-name="product" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 产品模型</a></li>
+                                <li><a data-name="ask" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 问答模型</a></li>
+                                <li><a data-name="down" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 下载模型</a></li>
+                                <li><a data-name="hr" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 招聘模型</a></li>
+                                <li><a data-name="guestbook" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 留言管理</a></li>
+                                <li><a data-name="recommend" href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> 推荐位设置</a></li>
+                                <li><a data-name="model" href="#"><i class="fa fa-circle-o"></i> 模型管理</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="pages/widgets.html">
+                            <a href="pages/widgets.html" data-name="seo">
                                 <i class="fa fa-laptop"></i> <span>SEO 优化</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 聚合标签</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 网站关键词</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> htaccess设置</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Robots设置</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 网站地图</a></li>
+                                <li><a data-name="tags" href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 聚合标签</a></li>
+                                <li><a data-name="keywords" href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 网站关键词</a></li>
+                                <li><a data-name="htaccess" href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> htaccess设置</a></li>
+                                <li><a data-name="robots" href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Robots设置</a></li>
+                                <li><a data-name="sitemap" href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 网站地图</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="#">
+                            <a href="#" data-name="module">
                                 <i class="fa fa-th"></i>
                                 <span>模块管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 幻灯管理</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 友情链接</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> 导航管理</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 在线客服</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 碎片管理</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 模块分类</a></li>
+                                <li><a data-name="slide" href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 幻灯管理</a></li>
+                                <li><a data-name="link" href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 友情链接</a></li>
+                                <li><a data-name="navigation" href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> 导航管理</a></li>
+                                <li><a data-name="online" href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 在线客服</a></li>
+                                <li><a data-name="fragment" href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 碎片管理</a></li>
+                                <li><a data-name="type" href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> 模块分类</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="#">
+                            <a href="#" data-name="system">
                                 <i class="fa fa-folder"></i>
                                 <span>系统管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> 权限菜单 </a></li>
-                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> 用户组</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> 站点设置</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> 模板标签</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> 多语言管理</a></li>
-                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> 数据库管理</a></li>
-                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> 模板文件</a></li>
-                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> 清除缓存</a></li>
+                                <li><a data-name="purview" href="/admin/purview"><i class="fa fa-circle-o"></i> 权限菜单 </a></li>
+                                <li><a data-name="usergroup" href="/admin/groups"><i class="fa fa-circle-o"></i> 用户组</a></li>
+                                <li><a data-name="user" href="/admin/user/list"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+                                <li><a data-name="config" href="/admin/site/"><i class="fa fa-circle-o"></i> 站点设置</a></li>
+                                <li><a data-name="lang" href="/admin/language/"><i class="fa fa-circle-o"></i> 多语言管理</a></li>
+                                <li><a data-name="database" href="/admin/db/"><i class="fa fa-circle-o"></i> 数据库管理</a></li>
+                                <li><a data-name="template" href="/admin/tpl"><i class="fa fa-circle-o"></i> 模板文件</a></li>
+                                <li><a data-name="clearcache" href="/admin/cache"><i class="fa fa-circle-o"></i> 清除缓存</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -268,28 +267,26 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                     <%=headers.title%> 
+                    <%=headers.title%>
                     <small><%=headers.description%> </small>
                     </h1>
                     <ol class="breadcrumb">
-                         <%headers.breadcrumb.forEach(function(one){%> 
-                            <li><a href="<%-one.link%>"><i class="fa fa-dashboard"></i><%-one.name%></a></li>
-                         <%})%> 
+                        <%headers.breadcrumb.forEach(function(one){%>
+                        <li><a href="<%-one.link%>"><i class="fa fa-dashboard"></i><%-one.name%></a></li>
+                        <%})%>
                     </ol>
                 </section>
-
                 <section class="content">
-                <p class="login-box-msg"> 
-                 <% if(flash && flash.succ){%>  
-                    <div class="alert alert-success  alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                         <%=flash.succ%> 
-                    </div>
-                <%}%> 
-                 <% if(flash && flash.error){%>  
-                    <div class="alert alert-info  alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                         <%=flash.error%> 
-                    </div>
-                <%}%>     
-
+                    <p class="login-box-msg">
+                        <% if(flash && flash.succ){%>
+                        <div class="alert alert-success  alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <%=flash.succ%>
+                        </div>
+                        <%}%>
+                        <% if(flash && flash.error){%>
+                        <div class="alert alert-info  alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <%=flash.error%>
+                        </div>
+                        <%}%>
