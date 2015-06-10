@@ -13,7 +13,9 @@ module.exports = {
 				link: "/admin/main"
 			}],
 			'title': '后台首页',
-			'description': "整站数据信息"
+			'description': "整站数据信息",
+			'parent_purview': "personal",
+			'purview': "adminindex"
 		}
 		return res.view();
 	}

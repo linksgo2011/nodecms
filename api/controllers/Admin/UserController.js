@@ -22,17 +22,25 @@ function hasAttr(obj) {
 
 module.exports = {
 	login: function(req, res, next) {
-		res.locals.headers  = {
-			'breadcrumb':[{name:"后台首页",link:"/admin/main"},{name:"登陆",link:"/admin/user/login"}],
-			'title':'登陆',
-			'description':"快速开始你的工作"
+		res.locals.headers = {
+			'breadcrumb': [{
+				name: "后台首页",
+				link: "/admin/main"
+			}, {
+				name: "登陆",
+				link: "/admin/user/login"
+			}],
+			'title': '登陆',
+			'description': "快速开始你的工作"
 		};
 		if (req.method === "POST") {
 			var username = req.param("username", "");
 			var password = req.param("password", "");
 			// return res.end(JSON.stringify(req.body));
 			if (!username || !password) {
-				req.session.flash = {error:"用户名或者密码错误！"};
+				req.session.flash = {
+					error: "用户名或者密码错误！"
+				};
 				return res.view();
 			}
 			User.findOne({
@@ -51,7 +59,9 @@ module.exports = {
 						return res.redirect("/admin/main");
 					}
 				}
-				req.session.flash = {error:"用户名或者密码错误！"}
+				req.session.flash = {
+					error: "用户名或者密码错误！"
+				}
 				return res.view();
 			});
 		} else {
@@ -66,19 +76,28 @@ module.exports = {
 	password: function(req, res, next) {
 		res.locals.errors = {};
 		res.locals.params = {};
-		res.locals.headers  = {
-			'breadcrumb':[{name:"后台首页",link:"/admin/main"},{name:"修改密码",link:"/admin/user/password"}],
-			'title':'修改密码',
-			'description':"重置您的登陆密码"
+		res.locals.headers = {
+			'breadcrumb': [{
+				name: "后台首页",
+				link: "/admin/main"
+			}, {
+				name: "修改密码",
+				link: "/admin/user/password"
+			}],
+			'title': '修改密码',
+			'description': "重置您的登陆密码",
+			'parent_purview': "personal",
+			'purview': "propass"
 		};
+		var user_id = req.session.user && req.session.user.id;
+		if (!user_id) {
+			return res.redirect('/admin/user/login');
+		}
+
 		if (req.method == "POST") {
 			var params = req.allParams();
 			var errors = User.pwdValidate(params);
 
-			var user_id = req.session.user && req.session.user.id;
-			if (!user_id) {
-				return res.redirect('/admin/user/login');
-			}
 			if (hasAttr(errors)) {
 				res.locals.params = params;
 				res.locals.errors = errors;
@@ -104,7 +123,7 @@ module.exports = {
 				}).exec(function(err, updated) {
 					if (err) next(err);
 					req.session.flash = {
-						'succ':"密码修改成功!"
+						'succ': "密码修改成功!"
 					};
 					return res.redirect("/admin/user/login");
 				});
@@ -127,24 +146,33 @@ module.exports = {
 	 * 修改资料
 	 */
 	profile: function(req, res, next) {
-		res.locals.headers  = {
-			'breadcrumb':[{name:"后台首页",link:"/admin/main"},{name:"修改资料",link:"/admin/user/password"}],
-			'title':'修改资料',
-			'description':"修改你的个人资料"
+		res.locals.headers = {
+			'breadcrumb': [{
+				name: "后台首页",
+				link: "/admin/main"
+			}, {
+				name: "修改资料",
+				link: "/admin/user/password"
+			}],
+			'title': '修改资料',
+			'description': "修改你的个人资料",
+			'parent_purview': "personal",
+			'purview': "profile"
 		};
 		res.locals.errors = {};
 		res.locals.params = res.locals.user = req.session.user;
 		var user_id = req.session.user && req.session.user.id;
+		if (!user_id) {
+			return res.redirect('/admin/user/login');
+		}
+			
 		if (req.method == "POST") {
-			if (!user_id) {
-				return res.redirect('/admin/user/login');
-			}
 			User.update({
 				"id": user_id
 			}, req.body).exec(function(err, updated) {
 				if (err) next(err);
 				req.session.flash = {
-					'succ':"个人资料更新成功!"
+					'succ': "个人资料更新成功!"
 				};
 				return res.redirect(req.url);
 			});
