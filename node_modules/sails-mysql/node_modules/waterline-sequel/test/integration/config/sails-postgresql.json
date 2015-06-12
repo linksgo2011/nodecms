@@ -1,9 +1,0 @@
-{
-  "host": "localhost",
-  "user": "postgres",
-  "password": "",
-  "database": "sailspg",
-  "port": 5432,
-  "schema": true,
-  "ssl": false
-}
