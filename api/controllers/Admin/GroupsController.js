@@ -105,10 +105,66 @@ module.exports = {
 	 * ajax 分配权限
 	 */
 	d_purview:function(req, res, next){
-		Purview.getTree().then(function(data) {
-			console.log(data);
-			res.locals.purviews = data;
-			return res.view();
-		});
+
+		function  getKeys(obj){
+			if(obj === "false"){
+				return false;
+			}
+			if(typeof obj !== "object"){
+				return obj;
+			}
+			var tmp = [];
+			for(var tmp_key in obj){
+				tmp.push(tmp_key);
+			}
+			return tmp;
+		}
+		res.locals.layout = false;
+		res.locals.purview = null;
+		res.locals.purviews = null;
+
+		var id = req.param("id");
+		if (!id) {
+			return res.end("请求参数错误");
+		}
+
+		if(req.method === "POST"){
+			// 处理表单数据
+			var postData = req.body;
+			delete postData['id'];
+			delete postData['action'];
+			for(var key in postData){
+				postData[key].method = getKeys(postData[key].method);
+				if(!postData[key].has){
+					delete postData[key];
+				}
+			}
+
+			// return res.json(postData);
+			Groups.update({id:id},{purview:JSON.stringify(postData)}).exec(function(error,effect){
+				if(error){
+					return next(error);
+				}
+				req.session.flash = {succ:"更新成功!"}
+				return res.json({result:true,data:null,msg:null});
+			});
+		}else{
+			var permise = Purview.getTree();
+
+			permise = permise.then(function(data){
+				if(!data){
+					return res.end("请求错误!");
+				}
+				res.locals.purviews = data;
+				return Groups.findOne({id:id});
+			});
+
+			permise.then(function(data){
+				if(data){
+					res.locals.purview = JSON.parse(data.purview);
+				}
+				return res.view();
+			});
+		}
 	}
 };

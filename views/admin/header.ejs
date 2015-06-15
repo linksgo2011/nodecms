@@ -21,6 +21,27 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <script type="text/javascript">
+            var _config = {
+                "parent_purview":"<%=headers.parent_purview%>",
+                "purview":"<%=headers.purview%>"
+            };
+        </script>
+        <!-- jQuery 2.1.4 -->
+        <script src="/admin_lte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- jQuery UI 1.11.2 -->
+        <script src="/lib/jquery-ui.min.js" type="text/javascript"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        <!-- Bootstrap 3.3.2 JS -->
+        <script src="/admin_lte/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- AdminLTE App -->
+        <script src="/admin_lte/dist/js/app.min.js" type="text/javascript"></script>
+        <script src="/js/main.js" type="text/javascript"></script>
+        
     </head>
     <body class="skin-blue sidebar-mini">
         <div class="wrapper">
@@ -192,8 +213,8 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a data-name="adminindex" href="/admin/main/index"><i class="fa fa-circle-o"></i> 后台首页</a></li>
-                                <li><a data-name="profile" href="/admin/user/password"><i class="fa fa-circle-o text-aqua"></i> 修改密码</a></li>
-                                <li><a data-name="propass" href="/admin/user/profile"><i class="fa fa-circle-o text-yellow"></i> 个人资料</a></li>
+                                <li><a data-name="propass" href="/admin/user/password"><i class="fa fa-circle-o text-aqua"></i> 修改密码</a></li>
+                                <li><a data-name="profile" href="/admin/user/profile"><i class="fa fa-circle-o text-yellow"></i> 个人资料</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
