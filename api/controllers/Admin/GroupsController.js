@@ -30,7 +30,7 @@ module.exports = {
 		res.locals.groups = {};
 		if(req.method == "POST"){
 			var data = req.body;
-			data.purview = [];
+			data.purview = "{}";
 			data.isupdate = 1;
 			Groups.create(data).exec(function(error,data){
 				if(error) return next(error);
@@ -158,7 +158,7 @@ module.exports = {
 				res.locals.purviews = data;
 				return Groups.findOne({id:id});
 			});
-
+			
 			permise.then(function(data){
 				if(data){
 					res.locals.purview = JSON.parse(data.purview);

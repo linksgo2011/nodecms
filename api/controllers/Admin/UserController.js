@@ -185,5 +185,178 @@ module.exports = {
 				res.view();
 			});
 		}
+	},
+
+	/**
+	 * 用户列表
+	 */
+	list:function(req, res, next){
+		res.locals.data = [];
+		res.locals.groups = [];
+		res.locals.headers = {
+			'breadcrumb': [{
+				name: "用户列表",
+				link: "/admin/main"
+			}],
+			'title': '用户列表',
+			'description': "",
+			'parent_purview': "system",
+			'purview': "usergroup"
+		};
+
+		var conditions = {};
+		if(req.query.type && req.query.keywords){
+			if(req.query.type === "username"){
+				conditions.username = {'like':"%"+req.query.keywords+"%"};
+			}
+			if(req.query.type === "email"){
+				conditions.email = {'like':"%"+req.query.keywords+"%"};
+			}
+			if(req.query.type === "id" && !isNaN(req.query.keywords)){
+				conditions.id = req.query.keywords;
+			}
+		}
+		if(req.query.usergroup){
+			conditions.usergroup = Number(req.query.usergroup);
+		}
+		var p = Groups.find().then(function(data){
+			if(data){
+				res.locals.groups = data;
+			}
+			return User.find(conditions);
+		}).then(function(data){
+			res.locals.data = data;
+			return res.view();
+		}).catch(function(error){
+			return next(error);
+		});
+	},
+
+	d_add: function(req, res, next) {
+		res.locals.user = {};
+		res.locals.groups = {};
+		var p = Groups.find();
+
+		p.then(function(data){
+			if(data){
+				res.locals.groups = data;
+			}
+			if(req.method == "POST"){
+				var data = req.body;
+
+				var md5 = crypto.createHash('md5');
+				md5.update(data.password || "");
+				var passwordHash = md5.digest("hex");
+				data.password = passwordHash;
+
+				var now = Math.floor((new Date().getTime())/1000);
+
+				// 初始化时间
+				data.createtime = now;
+				data.updatetime = now;
+				data.lasttime = now;
+
+				// 初始化IP
+				data.regip = req.ip;
+				data.lastip = req.ip;
+				data.logincount = 0;
+				User.create(data).exec(function(error,data){
+					if(error) return next(error);
+					req.session.flash = {succ:"添加成功!"}
+					return res.json({result:true,data:null,msg:null});
+				});
+			}else{
+				return res.view();
+			}
+		});
+		p.catch(function(error){
+			return next(error);
+		});
+	},
+
+	/**
+	 * 更新
+	 */
+	d_update: function(req, res, next) {
+		var id = req.param("id");
+		if (!id) {
+			req.session.flash = {
+				error: "资源未找到"
+			};
+			return res.redirect("back");
+		}
+		res.locals.user = {};
+		res.locals.groups = {};
+
+		var p = User.findOne({id:id});
+
+		p = p.then(function(data){
+			if(!data){
+				req.session.flash = {
+					error: "资源未找到"
+				};
+				return res.redirect("back");
+			}
+			res.locals.user = data;
+			return Groups.find();
+		});
+
+		p.then(function(data){
+			console.log(data);
+			if(data){
+				res.locals.groups = data;
+			}
+			if(req.method == "POST"){
+				var data = req.body;
+				if(data.password){
+					var md5 = crypto.createHash('md5');
+					md5.update(data.password || "");
+					var passwordHash = md5.digest("hex");
+					data.password = passwordHash;
+				}else{
+					delete data.password;
+				}
+				var now = Math.floor((new Date().getTime())/1000);
+				data.updatetime = now;
+				User.update({id:id},data).exec(function(error,data){
+					if(error) return next(error);
+					req.session.flash = {succ:"添加成功!"}
+					return res.json({result:true,data:null,msg:null});
+				});
+			}else{
+				return res.view();
+			}
+		});
+		
+		p.catch(function(error){
+			return next(error);
+		});
+	},
+
+	/**
+	 * 删除
+	 */
+	delete: function(req, res, next) {
+		var id = req.param("id");
+		if (!id) {
+			req.session.flash = {
+				error: "资源未找到"
+			};
+			return res.redirect("back");
+		}
+		User.destroy({
+			id: id
+		}).then(function(data) {
+			if (data) {
+				req.session.flash = {
+					succ: "删除成功"
+				};
+			} else {
+				req.session.flash = {
+					error: "删除错误"
+				};
+			}
+			return res.redirect("back");
+		});
 	}
 };

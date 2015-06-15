@@ -21,6 +21,7 @@ module.exports = {
 			columnName: 'usergroup'
 		},
 		username: {
+			unique: true,
 			type: 'string',
 			columnName: 'username'
 		},
@@ -33,7 +34,7 @@ module.exports = {
 			columnName: 'salt'
 		},
 		email: {
-			type: 'string',
+			type: 'email',
 			columnName: 'email'
 		},
 		realname: {
@@ -66,7 +67,7 @@ module.exports = {
 		},
 		updatetime: {
 			type: 'integer',
-			columnName: 'createtime'
+			columnName: 'updatetime'
 		},
 		lasttime: {
 			type: 'integer',
@@ -85,7 +86,7 @@ module.exports = {
 			columnName: 'logincount'
 		},
 		status: {
-			type: 'email',
+			type: 'integer',
 			columnName: 'status'
 		}
 	},

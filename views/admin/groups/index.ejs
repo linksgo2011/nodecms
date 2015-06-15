@@ -56,20 +56,19 @@
 <!-- jquery 表单异步提交 -->
 <script type="text/javascript" src="/lib/jquery.form.js"></script>
 <script type="text/javascript">
-$(function(){
-    $(document).on("submit",".ajax_form form",function () {
-        $(".ajax_form form").ajaxSubmit({
-            success: function (data) {
-                if(typeof data === "object" && data.result){
-                    window.location.reload();
-                }
-                if(typeof data === "string"){
-                    $(".ajax_form").replaceWith(data);
-                }
+
+$(document).on("submit",".ajax_form form",function () {
+    $(".ajax_form form").ajaxSubmit({
+        success: function (data) {
+            if(typeof data === "object" && data.result){
+                window.location.reload();
             }
-        });
-        return false;
+            if(typeof data === "string"){
+                $(".ajax_form").replaceWith(data);
+            }
+        }
     });
+    return false;
 });
 </script>
 <% include ../footer.ejs %>

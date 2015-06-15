@@ -61,5 +61,7 @@
 	"save": "保存",
 	"restore": "重置",
 	"generate": "生成",
-	"my_user": "my_user"
+	"my_user": "my_user",
+	"new_group": "new_group",
+	"new": "new"
 }
