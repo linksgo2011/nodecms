@@ -201,7 +201,7 @@ module.exports = {
 			'title': '用户列表',
 			'description': "",
 			'parent_purview': "system",
-			'purview': "usergroup"
+			'purview': "user"
 		};
 
 		var conditions = {};
@@ -302,7 +302,6 @@ module.exports = {
 		});
 
 		p.then(function(data){
-			console.log(data);
 			if(data){
 				res.locals.groups = data;
 			}
@@ -327,7 +326,7 @@ module.exports = {
 				return res.view();
 			}
 		});
-		
+
 		p.catch(function(error){
 			return next(error);
 		});
