@@ -25,7 +25,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "supervisor -i .tmp,view app.js"
   },
   "main": "app.js",
   "repository": {
