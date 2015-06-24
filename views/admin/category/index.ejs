@@ -35,39 +35,36 @@
                             <thead>
                                 <tr role="row">
                                     <th>ID</th>
-                                    <th>用户名</th>
-                                    <th>邮箱</th>
-                                    <th>真实姓名</th>
-                                    <th>手机</th>
-                                    <th>注册时间</th>
-                                    <th>最后登录</th>
-                                    <th>状态</th>
+                                    <th>标题</th>
+                                    <th>栏目模型</th>
+                                    <th>栏目目录</th>
+                                    <th>导航显示</th>
                                     <th>操作</th>
                                 </tr>
-                            </thead>
+                            </thead>    
                             <tbody>
                                 <%data.forEach(function(one, key) {%>
                                 <tr role="row" class="color-palette">
                                     <td><%=one.id%></td>
-                                    <td><b><%=__("purview_"+one.class)%></b></td>
-                                    <td><%=one.class%></td>
-                                    <td><%=one.method%></td>
-                                    <td><%=one.status%></td>
+                                    <td><%=one.name%></td>
+                                    <td><b><%=__("model_"+one.model)%></b></td>
+                                    <td><%=one.dir%></td>
+                                    <td><b><%=__(one.isnavigation)%></b></td>
                                     <td>
-                                        <a class="btn-form" href="/admin/purview/d_update/<%=one.id%>">编辑</a>
-                                        <a href="/admin/purview/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
+                                        <a class="btn-form" href="/admin/category/d_update/<%=one.id%>">编辑</a>
+                                        <a href="/admin/category/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
                                     </td>
                                 </tr>
                                 <%one.children.forEach(function(subone) {%>
                                 <tr role="row">
                                     <td><%=subone.id%></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=__("purview_"+subone.class)%></td>
-                                    <td><%=subone.class%></td>
-                                    <td><%=subone.method%></td>
-                                    <td><%=subone.status%></td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=subone.name%></td>
+                                    <td><b><%=__("model_"+subone.model)%></b></td>
+                                    <td><%=subone.dir%></td>
+                                    <td><b><%=__(subone.isnavigation)%></b></td>
                                     <td>
-                                        <a class="btn-form" href="/admin/purview/d_update/<%=subone.id%>">编辑</a>
-                                        <a href="/admin/purview/delete/<%=subone.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
+                                        <a class="btn-form" href="/admin/category/d_update/<%=subone.id%>">编辑</a>
+                                        <a href="/admin/category/delete/<%=subone.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
                                     </td>
                                 </tr>
                                 <%})%>
