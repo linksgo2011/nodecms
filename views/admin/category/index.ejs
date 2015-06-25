@@ -1,26 +1,12 @@
 <% include ../header.ejs %>
+<style type="text/css">
+.modal-content{width:800px;}
+</style>
 <div class="row">
     <div class="col-md-12">
         <div class="box box">
             <div class="box-header with-border">
                 <h3 class="box-title">栏目列表</h3>
-
-                <!-- todo -->
-<!--                 <div class="box-form">
-                    <hr>
-                    <form class="form-inline" method="get">
-                        <div class="form-group">
-                            <label for="keywords">关键词类型：</label>
-                            <select name="type" class="form-control">
-                                <option value="username" <%if(req.query.type == "username"){%> selected <%}%>>用户名</option>
-                                <option value="email" <%if(req.query.type == "email"){%> selected <%}%>>邮箱</option>
-                                <option value="id" <%if(req.query.type == "id"){%> selected <%}%>>ID</option>
-                            </select>    
-                            <input type="text" name="keywords" class="form-control" value="<%-req.query.keywords%>" >
-                        </div>
-                        <button type="submit" class="btn btn-warning">搜 索</button>
-                    </form>
-                </div> -->
             </div>
             <div class="box-body dataTables_wrapper form-inline dt-bootstrap" >
                 <div class="row">
@@ -47,9 +33,9 @@
                                 <tr role="row" class="color-palette">
                                     <td><%=one.id%></td>
                                     <td><%=one.name%></td>
-                                    <td><b><%=__("model_"+one.model)%></b></td>
+                                    <td><%=__("model_"+one.model)%></td>
                                     <td><%=one.dir%></td>
-                                    <td><b><%=__(one.isnavigation)%></b></td>
+                                    <td><%=__("status_"+one.isnavigation)%></td>
                                     <td>
                                         <a class="btn-form" href="/admin/category/d_update/<%=one.id%>">编辑</a>
                                         <a href="/admin/category/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
@@ -59,9 +45,9 @@
                                 <tr role="row">
                                     <td><%=subone.id%></td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=subone.name%></td>
-                                    <td><b><%=__("model_"+subone.model)%></b></td>
+                                    <td><%=__("model_"+subone.model)%></td>
                                     <td><%=subone.dir%></td>
-                                    <td><b><%=__(subone.isnavigation)%></b></td>
+                                    <td><%=__("status_"+subone.isnavigation)%></td>
                                     <td>
                                         <a class="btn-form" href="/admin/category/d_update/<%=subone.id%>">编辑</a>
                                         <a href="/admin/category/delete/<%=subone.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>

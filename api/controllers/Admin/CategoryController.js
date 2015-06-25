@@ -16,11 +16,13 @@ module.exports = {
         }
 
         res.locals.data = [];
-        Category.getTree().then(function(data) {
+        Category.getTree({}).then(function(data) {
             res.locals.data = data;
             return res.view();
-            return res.end(JSON.stringify(data));
         });
+    },
+    d_add: function(req, res, next) {
+        res.locals.category = {};
+        return res.view();
     }
-
 };

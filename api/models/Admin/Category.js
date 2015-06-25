@@ -126,7 +126,7 @@ module.exports = {
      * 获取tree结构的数据
      */
     getTree: function() {
-        return this.find().then(function(data) {
+        return this.find({lang:"zh_cn"}).then(function(data) {
             if (data && util.isArray(data)) {
                 var rs = [];
                 data.forEach(function(one, key) {

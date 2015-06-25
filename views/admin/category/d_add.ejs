@@ -1,0 +1,40 @@
+<div id="category_d_add" class="ajax_form">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">添加</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <form class="form-horizontal col-sm-12" method="post" action=" <%-req.url%> ">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="realname" class="col-sm-4 control-label">真实姓名</label>
+                            <div class="col-sm-6">
+                                <input type="input" class="form-control" id="realname" name="realname" placeholder="真实姓名" value="<%-category.realname%>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="realname" class="col-sm-4 control-label">真实姓名</label>
+                            <div class="col-sm-6">
+                                <input type="input" class="form-control" id="realname" name="realname" placeholder="真实姓名" value="<%-category.realname%>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="/images/nopic8080.gif">
+                        <input type="file" name="thumb">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <button type="submit" class="btn btn-primary">提 交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
