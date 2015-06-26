@@ -64,5 +64,11 @@
 	"my_user": "my_user",
 	"new_group": "new_group",
 	"new": "new",
-	"model_article": "model_article"
+	"model_article": "model_article",
+	"model_product": "model_product",
+	"model_down": "model_down",
+	"model_hr": "model_hr",
+	"model_page": "model_page",
+	"model_guestbook": "model_guestbook",
+	"model_ask": "model_ask"
 }

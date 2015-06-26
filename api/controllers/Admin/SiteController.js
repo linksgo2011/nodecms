@@ -53,6 +53,8 @@ module.exports = {
 			}else{
 				return res.view();
 			}
+		}).catch(function(error){
+			return next(error);
 		});
 	},
 	mail:function(req, res, next){
@@ -77,6 +79,8 @@ module.exports = {
 				res.locals.config = tmp;
 			}
 			return res.view();
+		}).catch(function(error){
+			return next(error);
 		});
 	},
 	lang:function(req, res, next){
@@ -101,6 +105,8 @@ module.exports = {
 				res.locals.config = tmp;
 			}
 			return res.view();
+		}).catch(function(error){
+			return next(error);
 		});
 	},
 	// 通用保存操作
