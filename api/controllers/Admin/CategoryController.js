@@ -18,8 +18,7 @@ module.exports = {
 		res.locals.data = [];
 		Category.getTree({}).then(function(data) {
 			res.locals.data = data;
-			return res.json(data);
-			// return res.view();
+			return res.view();
 		});
 	},	
 

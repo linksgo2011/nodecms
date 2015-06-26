@@ -1,21 +1,23 @@
 var util = require('util');
-
+var treeList = [];
 /**
  * 递归获取子树
  * @param  {int} parent_id 父ID
  * @param  {array} records   需要寻找的数组
  * @return {数组}           
  */
-function getsubTree(parent_id, records) {
+function getsubTree(parent, records) {
 	var rs = [];
 	records.forEach(function(one, key) {
-		if (one.parent === parent_id) {
+		if (one.parent === parent.id) {
 			rs.push(one);
 			delete records[key];
 		}
 	});
 	for (var i = rs.length - 1; i >= 0; i--) {
-		rs[i].children = getsubTree(rs[i], records);
+        rs[i].deep = (parent.deep+1);
+        treeList.push(rs[i]);
+	   getsubTree(rs[i], records);
 	}
 	return rs;
 }
@@ -137,9 +139,11 @@ module.exports = {
 					}
 				});
 				for (var i = rs.length - 1; i >= 0; i--) {
-					rs[i].children = getsubTree(rs[i].id, data);
+                    rs[i].deep = 0;
+                    treeList.push(rs[i]);
+					getsubTree(rs[i], data);
 				}
-				return rs;
+				return treeList;
 			}
 		});
 	}
