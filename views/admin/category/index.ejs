@@ -13,7 +13,7 @@
                     <div class="col-sm-12">
                         <div class="row clearfix">
                             <div class="col-sm-12">
-                                <button href="/admin/category/d_add" class="btn  btn-primary btn-form">添加栏目</button>
+                                <a href="/admin/category/add" class="btn btn-primary">添加栏目</a>
                             </div>
                         </div>
                         <hr>
@@ -37,7 +37,7 @@
                                     <td><%=one.dir%></td>
                                     <td><%=__("status_"+one.isnavigation)%></td>
                                     <td>
-                                        <a class="btn-form" href="/admin/category/d_update/<%=one.id%>">编辑</a>
+                                        <a href="/admin/category/update/<%=one.id%>">编辑</a>
                                         <a href="/admin/category/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
                                     </td>
                                 </tr>
@@ -50,22 +50,4 @@
         </div>
     </div>
 </div>
-
-<!-- jquery 表单异步提交 -->
-<script type="text/javascript" src="/lib/jquery.form.js"></script>
-<script type="text/javascript">
-$(document).on("submit",".ajax_form form",function () {
-    $(".ajax_form form").ajaxSubmit({
-        success: function (data) {
-        if(typeof data === "object" && data.result){
-            window.location.reload();
-        }
-        if(typeof data === "string"){
-                $(".ajax_form").replaceWith(data);
-            }
-        }
-    });
-    return false;
-});
-</script>
 <% include ../footer.ejs %>

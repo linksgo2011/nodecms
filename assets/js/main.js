@@ -65,9 +65,9 @@
 				});
 			}
 			newDialog.find(".modal-content").text("加载中...");
-			newDialog.data("bs.modal",null);
+			newDialog.data("bs.modal", null);
 			newDialog.modal({
-				"remote":remote
+				"remote": remote
 			});
 			return false;
 		});

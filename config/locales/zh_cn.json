@@ -64,11 +64,11 @@
 	"my_user": "my_user",
 	"new_group": "new_group",
 	"new": "new",
-	"model_article": "model_article",
-	"model_product": "model_product",
-	"model_down": "model_down",
-	"model_hr": "model_hr",
-	"model_page": "model_page",
-	"model_guestbook": "model_guestbook",
-	"model_ask": "model_ask"
+	"model_article": "文章模型",
+	"model_product": "产品模型",
+	"model_down": "下载模型",
+	"model_hr": "招聘模型",
+	"model_page": "单页模型",
+	"model_guestbook": "留言模型",
+	"model_ask": "问答模型"
 }

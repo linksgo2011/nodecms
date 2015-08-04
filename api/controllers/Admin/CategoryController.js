@@ -20,9 +20,9 @@ module.exports = {
 			res.locals.data = data;
 			return res.view();
 		});
-	},	
+	},
 
-	add: function(req, resm, next) {
+	add: function(req, res, next) {
 		res.locals.headers = {
 			'breadcrumb': [{
 				name: "后台首页",
@@ -37,6 +37,37 @@ module.exports = {
 			'purview': "category"
 		};
 		res.locals.category = {};
-		return res.view();
+		// 获取模型列表
+		Models
+		.find({status: 1})
+		.sort("listorder ASC")
+		.then(function(data) {
+			res.locals.models = data;
+			return Category.getTree({});
+		})
+		.then(function(categorys) {
+			res.locals.categorys = categorys;
+
+			if(req.method == "POST"){
+
+				req.body.lang = "zh_cn";
+				Category.create(req.body).then(function(records){
+					req.session.flash = {
+						succ: "添加成功!"
+					};
+					return res.redirect("/admin/category/index");
+				},function(err){
+					res.locals.flash = {
+						error: "添加失败!"
+					};
+					res.locals.category = req.body;
+					return res.view();
+				});
+			}else{
+				return res.view();
+			}
+		}, function(err) {
+			return next(err);
+		});
 	}
 };

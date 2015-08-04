@@ -130,6 +130,7 @@ module.exports = {
 		return this.find({
 			lang: "zh_cn"
 		}).then(function(data) {
+			treeList = [];
 			if (data && util.isArray(data)) {
 				var rs = [];
 				data.forEach(function(one, key) {
