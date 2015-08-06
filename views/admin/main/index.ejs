@@ -14,33 +14,33 @@
                         <tbody>
                             <tr>
                                 <td>用户名</td>
-                                <td><span class="label label-success">admin</span></td>
-                                <td>X6CMS版本</td>
-                                <td><span class="label label-success">2.2(20130305)</span></td>
+                                <td><span class="label label-success"><%=user.username%></span></td>
+                                <td>运行模式</td>
+                                <td><span class="label label-success"><%=__(sails.config.environment)%></span></td>
                             </tr>
                             <tr>
                                 <td>用户组</td>
-                                <td><span class="label label-success">1</span></td>
-                                <td>运行环境</td>
-                                <td><span class="label label-success">Apache/2.2.22 (Win32) PHP/5.4.3</span></td>
+                                <td><span class="label label-success"><%=user.usergroup%></span></td>
+                                <td>系统目录</td>
+                                <td><span class="label label-success"><%=sails.config.appPath%></span></td>
                             </tr>
                             <tr>
                                 <td>最后登录时间</td>
-                                <td><span class="label label-success">2015-06-03</span></td>
-                                <td>上传许可</td>
-                                <td><span class="label label-success">2M</span></td>
+                                <td><span class="label label-success"><%=dateFormat(user.lasttime)%></span></td>
+                                <td>端口</td>
+                                <td><span class="label label-success"><%=sails.config.port%></span></td>
                             </tr>
                             <tr>
                                 <td>最后登录ip</td>
-                                <td><span class="label label-success">127.0.0.1</span></td>
-                                <td>MYSQL版本</td>
-                                <td><span class="label label-success">5.5.24-log</span></td>
+                                <td><span class="label label-success"><%=user.lastip%></span></td>
+                                <td>数据库</td>
+                                <td><span class="label label-success"><%=sails.config.models['connection']%></span></td>
                             </tr>
                             <tr>
                                 <td>登录次数</td>
-                                <td><span class="label label-success">317</span></td>
-                                <td>剩余空间</td>
-                                <td><span class="label label-success">238789.73M</span></td>
+                                <td><span class="label label-success"><%=user.logincount%></span></td>
+                                <td>错误级别</td>
+                                <td><span class="label label-success"><%=sails.config.log['level']%></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -63,24 +63,24 @@
                     <table class="table no-margin">
                         <tbody>
                             <tr>
-                                <td><a href="#">下载模型</a></td>
-                                <td>12</td>
+                                <td><a href="/admin/article">文章统计</a></td>
+                                <td><%=stat[0]%></td>
                             </tr>
                             <tr>
-                                <td><a href="#">产品模型</a></td>
-                                <td>1212</td>
+                                <td><a href="/admin/down">下载统计</a></td>
+                                <td><%=stat[1]%></td>
                             </tr>
                             <tr>
-                                <td><a href="#">问答模型</a></td>
-                                <td>23</td>
+                                <td><a href="/admin/product">产品统计</a></td>
+                                <td><%=stat[2]%></td>
                             </tr>
                             <tr>
-                                <td><a href="#">招聘模型</a></td>
-                                <td>23</td>
+                                <td><a href="/admin/ask">问答统计</a></td>
+                                <td><%=stat[3]%></td>
                             </tr>
                             <tr>
-                                <td><a href="#">在线人数</a></td>
-                                <td>34</td>
+                                <td><a href="/admin/hr">招聘统计</a></td>
+                                <td><%=stat[4]%></td>
                             </tr>
                         </tbody>
                     </table>

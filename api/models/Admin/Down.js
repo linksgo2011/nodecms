@@ -33,10 +33,6 @@ module.exports = {
             type: "text",
             columnName: "content"
         },
-        copyfrom: {
-            type: "string",
-            columnName: "copyfrom"
-        },
         createtime: {
             type: "integer",
             columnName: "createtime"
@@ -44,10 +40,6 @@ module.exports = {
         description: {
             type: "text",
             columnName: "description"
-        },
-        fromlink: {
-            type: "string",
-            columnName: "fromlink"
         },
         hits: {
             type: "integer",

@@ -69,5 +69,11 @@
 	"model_hr": "招聘模型",
 	"model_page": "单页模型",
 	"model_guestbook": "留言模型",
-	"model_ask": "问答模型"
+	"model_ask": "问答模型",
+	"guest_status_0": "未审核",
+	"guest_status_1": "已经审核",
+	"development": "开发模式",
+	"navigation": "导航分类",
+	"slide": "幻灯分类",
+	"link": "友情链接"
 }
