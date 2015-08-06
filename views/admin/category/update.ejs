@@ -55,6 +55,7 @@
                             <div class="form-group col-sm-6">
                                 <label class="col-sm-4 control-label">栏目模型</label>
                                 <div class="col-sm-8">
+                                    <!-- todo 从数据库取出 -->
                                     <select name="model" id="model" class="form-control">
                                         <%models.forEach(function(one, key) {%>
                                             <option value="<%-one.varname%>" <% if(category.model == one.varname){ %> selected <%}%> > <%=__("model_"+one.varname)%></option>
@@ -64,6 +65,7 @@
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="col-sm-4 control-label">上级栏目</label>
+                                    <!-- todo 从数据库取出 -->
                                     <select name="parent" id="parent" class="form-control">
                                         <option value="0">顶级栏目</option>
                                         <%categorys.forEach(function(one, key) {%>

@@ -126,10 +126,16 @@ module.exports = {
 	/**
 	 * 获取tree结构的数据
 	 */
-	getTree: function() {
-		return this.find({
+	getTree: function(conditions) {
+		if(!conditions){
+			conditions = {};
+		}
+		
+		var merged = util._extend({
 			lang: "zh_cn"
-		}).then(function(data) {
+		},conditions);
+
+		return this.find(merged).then(function(data) {
 			treeList = [];
 			if (data && util.isArray(data)) {
 				var rs = [];
