@@ -75,5 +75,9 @@
 	"development": "开发模式",
 	"navigation": "导航分类",
 	"slide": "幻灯分类",
-	"link": "友情链接"
+	"link": "友情链接",
+	"qq": "QQ",
+	"email": "邮箱",
+	"wangwang": "旺旺",
+	"code": "纯代码"
 }
