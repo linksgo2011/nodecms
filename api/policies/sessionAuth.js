@@ -8,7 +8,9 @@
  *
  */
 module.exports = function(req, res, next) {
+        console.log(16,req.session.user);
     if (req.session.user) {
+        res.locals.user = req.session.user;
         return next();
     }
 
