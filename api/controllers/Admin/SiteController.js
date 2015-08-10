@@ -3,7 +3,6 @@
  */
 module.exports = {
 	index: function(req, res, next) {
-		return res.json(sails.config);
 		res.locals.config = {};
 		res.locals.headers = {
 			'breadcrumb': [{

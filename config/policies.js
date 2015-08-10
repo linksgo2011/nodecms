@@ -30,7 +30,7 @@ module.exports.policies = {
         "login":['flash']
     },
     // '*': ['flash','helper']
-    'admin/*': ['flash', 'sessionAuth','helper']
+    '*': ['flash', 'sessionAuth','helper']
     
     /***************************************************************************
      *                                                                          *

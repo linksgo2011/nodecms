@@ -8,15 +8,19 @@
  *
  */
 module.exports = function(req, res, next) {
-        console.log(16,req.session.user);
-    if (req.session.user) {
-        res.locals.user = req.session.user;
-        return next();
+
+    if(req.options.controller.indexOf("admin") === 0){
+        if (req.session.user) {
+            res.locals.user = req.session.user;
+            return next();
+        }
+
+        // User is not allowed
+        // (default res.forbidden() behavior can be overridden in `config/403.js`)
+        // return res.forbidden('You are not permitted to perform this action.');
+        req.session.flash = ['403 forbidden!'];
+        return res.redirect('/admin/user/login');
     }
 
-    // User is not allowed
-    // (default res.forbidden() behavior can be overridden in `config/403.js`)
-    // return res.forbidden('You are not permitted to perform this action.');
-    req.session.flash = ['403 forbidden!'];
-    return res.redirect('/admin/user/login');
+    return next();
 };
