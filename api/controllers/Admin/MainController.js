@@ -7,6 +7,10 @@
 
 module.exports = {
 	index: function(req, res, next) {
+
+        sails.config.paths.views += ("\\"+"templets\\default");
+        return res.json(sails.config);
+
 		res.locals.headers = {
 			'breadcrumb': [{
 				name: "后台首页",
