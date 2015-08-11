@@ -8,7 +8,7 @@
 var path = require("path");
 
 module.exports = function templet() {
-
+	
 	// Get access to `req`, `res`, & `sails`
 	var req = this.req;
 	var res = this.res;
@@ -35,12 +35,7 @@ module.exports = function templet() {
 		var extName = sails.config.views.engine.ext;
 		res.locals.view += ("." + extName);
 	}
-
-	// If the user-agent wants JSON, always respond with JSON
-	if (req.wantsJSON) {
-		return res.jsonx(data);
-	}
-
+	
 	var view = themePrifx+ path.sep + res.locals.view;
     return res.view(view,{});
 };
