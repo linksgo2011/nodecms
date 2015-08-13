@@ -20,7 +20,7 @@ module.exports = function(model, page_info, _find_info) {
 
         model.count(find_info.where).then(function(count) {
             paging.count = Math.ceil(count/paging.limit);
-
+            
             find_info.limit = paging.limit;
             find_info.skip = paging.limit*(paging.current_page - 1);
             return model.find(find_info);

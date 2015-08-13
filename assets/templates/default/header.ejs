@@ -13,10 +13,9 @@
     <meta name="description" content="Designa Studio, a HTML5 / CSS3 template.">
     <meta name="author" content="Sylvain Lafitte, Web Designer, sylvainlafitte.com">
     
-    <title>HOME // Designa Studio</title>
+    <title>标格网站艺术  prinft Studio</title>
     
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     
     <link href='http://fonts.useso.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<%=static_dir%>/css/style.css">
@@ -30,21 +29,20 @@
     <!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
     <div class="container">
         <header id="navtop">
-            <a href="index.html" class="logo fleft">
+            <a href="/" class="logo fleft">
                 <img src="<%=static_dir%>/img/logo.png" alt="Designa Studio">
             </a>
-            
             <nav class="fright">
                 <ul>
-                    <li><a href="index.html" class="navactive">首页</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="/" class="<%if(currentMenu == "home"){%>navactive<%}%>">首页</a></li>
+                    <li><a href="/news" class="<%if(currentMenu == "news"){%>navactive<%}%>">Blog</a></li>
                 </ul>
                 <ul>
-                    <li><a href="works.html">案例</a></li>
-                    <li><a href="about.html">关于</a></li>
+                    <li><a href="/product" class="<%if(currentMenu == "product"){%>navactive<%}%>">案例</a></li>
+                    <li><a href="/page/index/about" class="<%if(currentMenu == "about"){%>navactive<%}%>">关于</a></li>
                 </ul>
                 <ul>
-                    <li><a href="services.html">服务</a></li>
+                    <li><a href="/page/index/service" class="<%if(currentMenu == "service"){%>navactive<%}%>">服务</a></li>
                 </ul>
             </nav>
         </header>

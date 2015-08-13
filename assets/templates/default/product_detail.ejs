@@ -1,0 +1,19 @@
+<% include ./header.ejs %>
+<div class="work-page main grid-wrap">
+
+        <header class="grid col-full">
+            <hr>
+            <p class="fleft">案例</p>
+        </header>
+
+        <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
+            <%-product.description%>
+        </aside>
+        <section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+            <h4><%=product.title%></h4>
+            <div class="content">
+                <p><%-product.content%></p>
+            </div>
+        </section>  
+    </div>
+<% include ./footer.ejs %>

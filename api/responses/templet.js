@@ -15,8 +15,6 @@ module.exports = function templet() {
 	var sails = req._sails;
 	var themePrifx = ".."+path.sep+"assets" + path.sep + "templates";
 	var relPathToView = "";
-	// Set status code
-	res.status(400);
 
 	if (!res.locals.theme) {
 		res.locals.theme = "default";

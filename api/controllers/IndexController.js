@@ -11,11 +11,12 @@ module.exports = {
                 });
             }
 
+            return Slide.find();
+        }).then(function(slides){
+            res.locals.slides = slides;
+            console.log(slides);
 
-            return Slide.find().
-
-        }).then(function(){
-
+            res.locals.currentMenu = "home";
             res.locals.theme = "default";
             res.locals.view = "index";
             return res.templet({});
