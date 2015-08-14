@@ -1,2 +1,0 @@
-#!/usr/bin/env node
-require('../r2.js').exec(process.argv.slice(2));
