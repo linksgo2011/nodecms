@@ -96,6 +96,30 @@ module.exports = {
         updatetime: {
             type: "integer",
             columnName: "updatetime"
+        },
+        tpl: {
+            type: "string",
+            columnName: "tpl"
+        },
+        client: {
+            type: "string",
+            columnName: "client"
+        },
+        details: {
+            type: "string",
+            columnName: "details"
+        },
+        technology: {
+            type: "string",
+            columnName: "technology"
+        },
+        links: {
+            type: "string",
+            columnName: "links"
+        },
+        testimonial: {
+            type: "string",
+            columnName: "testimonial"
         }
     }
 };
