@@ -1,4 +1,4 @@
-/* -------------------------------------------------------------
+ -------------------------------------------------------------
 
 ------------------------------------------------------------- */
 
@@ -286,7 +286,8 @@ nav a, menu a { text-decoration: none; color: #555; }
 .main > section { margin-bottom: 7em; }
 .main header{ color: #555; margin-bottom: 3em; }
 .main header hr{border-top-color:#999;}
-.arrow:after {content:" \27F6"; /* html unicode: &#10230; */ } 
+/*.arrow:after {content:" \27F6";  } */
+.arrow:after {content:" \2192"; /* html unicode: &#10230; */ } 
 header .arrow {color: #999; font-style: italic;}
 .arrow:hover {color: #0078CF; }
 
@@ -520,8 +521,18 @@ ul.page-numbers{float: right;overflow:hidden; display:block;}
 .lt-ie8 .col-one-quarter {width: 19.95%; }
 .lt-ie8 .col-three-quarters {width: 74.95%; }
 
-
-
+.about-page dl dd{
+    margin:0px;
+}
+.about-page #navteam dl{
+    padding-left:30px;
+}
+.about-page #navphilo p{
+    padding-left:30px;
+}
+.about-page #navother dl{
+    padding-left:30px;
+}
 /* -------------------------------------------------------------
 ======	MEDIA QUERIES
 ------------------------------------------------------------- */
@@ -590,4 +601,4 @@ ul.page-numbers{float: right;overflow:hidden; display:block;}
  
 /* -------------------------------------------------------------
 ======	END
-------------------------------------------------------------- */
+------------------------------------------------------------- 
