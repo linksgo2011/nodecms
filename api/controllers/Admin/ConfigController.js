@@ -1,5 +1,5 @@
 /**
- * Admin/SiteController
+ * Admin/ConfigController.js
  */
 module.exports = {
 	index: function(req, res, next) {
@@ -109,6 +109,7 @@ module.exports = {
 			return next(error);
 		});
 	},
+	
 	// 通用保存操作
 	update:function(req, res, next){
 		if(req.method === "POST"){

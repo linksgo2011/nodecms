@@ -15,9 +15,6 @@
         <link href="/admin_lte/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
         <!-- iCheck -->
         <link href="/admin_lte/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
-        
-        <link href="/styles/main.css" rel="stylesheet" type="text/css" />
-
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -46,7 +43,7 @@
         <div class="wrapper">
             <header class="main-header">
                 <!-- Logo -->
-                <a href="index2.html" class="logo">
+                <a href="" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini">CMS</span>
                     <!-- logo for regular state and mobile devices -->
@@ -60,28 +57,27 @@
                     </a>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            <!-- 提示菜单: style can be found in dropdown.less -->
-                            <!--
+
                             <li class="dropdown notifications-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">1</span>
+                                    <span class="label label-warning">0</span>
                                 </a>
                                  <ul class="dropdown-menu">
-                                    <li class="header">1条未读消息</li>
+                                    <li class="header">0条未读消息</li>
                                     <li>
                                         <ul class="menu">
                                             <li>
                                                 <a href="#">
-                                                    <i class="fa fa-warning text-yellow"></i> 安装成功后没有删除安装目录!
+                                                    <i class="fa fa-warning text-yellow"></i> 暂时没有通知消息!
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="footer"><a href="#">查看全部</a></li>
+                                    <!-- <li class="footer"><a href="#">查看全部</a></li> -->
                                 </ul> 
                             </li>
-                            -->
+                            
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -99,7 +95,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">修改资料</a>
+                                            <a href="/admin/user/profile" class="btn btn-default btn-flat">修改资料</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="/admin/user/logout" class="btn btn-default btn-flat">退出系统</a>
@@ -108,7 +104,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" >查看站点</a>
+                                <a href="/" >查看站点</a>
                             </li>
                         </ul>
                     </div>
@@ -116,19 +112,7 @@
             </header>
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
-                    <!-- search form -->
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="搜索……"/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">主要功能</li>
                         <li class="treeview">
@@ -155,22 +139,16 @@
                                 <li><a data-name="down" href="/admin/down"><i class="fa fa-circle-o"></i> 下载模型</a></li>
                                 <li><a data-name="hr" href="/admin/hr"><i class="fa fa-circle-o"></i> 招聘模型</a></li>
                                 <li><a data-name="guestbook" href="/admin/guestbook"><i class="fa fa-circle-o"></i> 留言管理</a></li>
-                                <!-- <li><a data-name="recommend" href="/admin/recommend"><i class="fa fa-circle-o"></i> 推荐位设置</a></li> -->
-                                <!-- <li><a data-name="model" href="/admin/model"><i class="fa fa-circle-o"></i> 模型管理</a></li> -->
                             </ul>
                         </li>
                         <li>
-                            <a href="pages/widgets.html" data-name="seo">
+                            <a href="#" data-name="seo">
                                 <i class="fa fa-laptop"></i> <span>SEO 优化</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li><a data-name="tags" href="/admin/tags"><i class="fa fa-circle-o"></i> 聚合标签</a></li>
                                 <li><a data-name="htaccess" href="/admin/htaccess"><i class="fa fa-circle-o"></i> htaccess设置</a></li>
                                 <li><a data-name="robots" href="/admin/robots"><i class="fa fa-circle-o"></i> Robots设置</a></li>
-                                <!-- 
-                                <li><a data-name="sitemap" href="/admin/sitemap"><i class="fa fa-circle-o"></i> 网站地图</a></li>
-                                <li><a data-name="keywords" href="/admin/keywords"><i class="fa fa-circle-o"></i> 网站关键词</a></li>
-                                 -->
                             </ul>
                         </li>
                         <li class="treeview">
@@ -196,11 +174,11 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a data-name="purview" href="/admin/purview"><i class="fa fa-circle-o"></i> 权限菜单 </a></li>
-                                <li><a data-name="usergroup" href="/admin/groups"><i class="fa fa-circle-o"></i> 用户组</a></li>
+                                <li><a data-name="usergroup" href="/admin/usergroup"><i class="fa fa-circle-o"></i> 用户组</a></li>
                                 <li><a data-name="user" href="/admin/user/list"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-                                <li><a data-name="config" href="/admin/site/"><i class="fa fa-circle-o"></i> 站点设置</a></li>
-                                <!-- TODO  -->
-<!--                                 <li><a data-name="lang" href="/admin/language/"><i class="fa fa-circle-o"></i> 多语言管理</a></li>
+                                <li><a data-name="config" href="/admin/config/"><i class="fa fa-circle-o"></i> 站点设置</a></li>
+                                <!-- TODO 第二期工作 -->
+<!--                            <li><a data-name="lang" href="/admin/language/"><i class="fa fa-circle-o"></i> 多语言管理</a></li>
                                 <li><a data-name="database" href="/admin/db/"><i class="fa fa-circle-o"></i> 数据库管理</a></li>
                                 <li><a data-name="template" href="/admin/tpl"><i class="fa fa-circle-o"></i> 模板文件</a></li>
                                 <li><a data-name="clearcache" href="/admin/cache"><i class="fa fa-circle-o"></i> 清除缓存</a></li> -->
@@ -208,7 +186,6 @@
                         </li>
                     </ul>
                 </section>
-                <!-- /.sidebar -->
             </aside>
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">

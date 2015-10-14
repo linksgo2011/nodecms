@@ -36,33 +36,42 @@ module.exports = {
 		if (req.method === "POST") {
 			var username = req.param("username", "");
 			var password = req.param("password", "");
-			// return res.end(JSON.stringify(req.body));
+
 			if (!username || !password) {
 				req.session.flash = {
 					error: "用户名或者密码错误！"
 				};
-				return res.view();
+				return res.redirect("back");
 			}
 			User.findOne({
 				username: username
-			}).exec(function findOneCB(err, found) {
+			}).populate('usergroup').exec(function findOneCB(err, found) {
 				if (err) {
 					return next(err);
 				}
-				if (found) {
-					var md5 = crypto.createHash('md5');
-					md5.update(password);
-					var passwordHash = md5.digest("hex");
-					if (passwordHash == found.password) {
-						// 登陆成功
-						req.session.user = found;
-						return res.redirect("/admin/main");
+				if (!found) {
+					req.session.flash = {
+						error: "用户不存在！"
 					}
+					return res.redirect("back");
 				}
-				req.session.flash = {
-					error: "用户名或者密码错误！"
+				if (!found.status) {
+					req.session.flash = {
+						error: "用户被禁用"
+					}
+					return res.redirect("back");
 				}
-				return res.view();
+				var md5 = crypto.createHash('md5');
+				md5.update(password);
+				var passwordHash = md5.digest("hex");
+				if (passwordHash != found.password) {
+					req.session.flash = {
+						error: "用户名或者密码错误！"
+					}
+					return res.redirect("back");
+				}
+				req.session.user = found;
+				return res.redirect("/admin/main");
 			});
 		} else {
 			return res.view();
@@ -165,7 +174,7 @@ module.exports = {
 		if (!user_id) {
 			return res.redirect('/admin/user/login');
 		}
-			
+
 		if (req.method == "POST") {
 			User.update({
 				"id": user_id
@@ -190,7 +199,7 @@ module.exports = {
 	/**
 	 * 用户列表
 	 */
-	list:function(req, res, next){
+	list: function(req, res, next) {
 		res.locals.data = [];
 		res.locals.groups = [];
 		res.locals.headers = {
@@ -205,29 +214,33 @@ module.exports = {
 		};
 
 		var conditions = {};
-		if(req.query.type && req.query.keywords){
-			if(req.query.type === "username"){
-				conditions.username = {'like':"%"+req.query.keywords+"%"};
+		if (req.query.type && req.query.keywords) {
+			if (req.query.type === "username") {
+				conditions.username = {
+					'like': "%" + req.query.keywords + "%"
+				};
 			}
-			if(req.query.type === "email"){
-				conditions.email = {'like':"%"+req.query.keywords+"%"};
+			if (req.query.type === "email") {
+				conditions.email = {
+					'like': "%" + req.query.keywords + "%"
+				};
 			}
-			if(req.query.type === "id" && !isNaN(req.query.keywords)){
+			if (req.query.type === "id" && !isNaN(req.query.keywords)) {
 				conditions.id = req.query.keywords;
 			}
 		}
-		if(req.query.usergroup){
+		if (req.query.usergroup) {
 			conditions.usergroup = Number(req.query.usergroup);
 		}
-		var p = Groups.find().then(function(data){
-			if(data){
+		var p = Groups.find().then(function(data) {
+			if (data) {
 				res.locals.groups = data;
 			}
 			return User.find(conditions);
-		}).then(function(data){
+		}).then(function(data) {
 			res.locals.data = data;
 			return res.view();
-		}).catch(function(error){
+		}).catch(function(error) {
 			return next(error);
 		});
 	},
@@ -237,11 +250,11 @@ module.exports = {
 		res.locals.groups = {};
 		var p = Groups.find();
 
-		p.then(function(data){
-			if(data){
+		p.then(function(data) {
+			if (data) {
 				res.locals.groups = data;
 			}
-			if(req.method == "POST"){
+			if (req.method == "POST") {
 				var data = req.body;
 
 				var md5 = crypto.createHash('md5');
@@ -249,7 +262,7 @@ module.exports = {
 				var passwordHash = md5.digest("hex");
 				data.password = passwordHash;
 
-				var now = Math.floor((new Date().getTime())/1000);
+				var now = Math.floor((new Date().getTime()) / 1000);
 
 				// 初始化时间
 				data.createtime = now;
@@ -260,16 +273,22 @@ module.exports = {
 				data.regip = req.ip;
 				data.lastip = req.ip;
 				data.logincount = 0;
-				User.create(data).exec(function(error,data){
-					if(error) return next(error);
-					req.session.flash = {succ:"添加成功!"}
-					return res.json({result:true,data:null,msg:null});
+				User.create(data).exec(function(error, data) {
+					if (error) return next(error);
+					req.session.flash = {
+						succ: "添加成功!"
+					}
+					return res.json({
+						result: true,
+						data: null,
+						msg: null
+					});
 				});
-			}else{
+			} else {
 				return res.view();
 			}
 		});
-		p.catch(function(error){
+		p.catch(function(error) {
 			return next(error);
 		});
 	},
@@ -288,10 +307,12 @@ module.exports = {
 		res.locals.user = {};
 		res.locals.groups = {};
 
-		var p = User.findOne({id:id});
+		var p = User.findOne({
+			id: id
+		});
 
-		p = p.then(function(data){
-			if(!data){
+		p = p.then(function(data) {
+			if (!data) {
 				req.session.flash = {
 					error: "资源未找到"
 				};
@@ -301,33 +322,41 @@ module.exports = {
 			return Groups.find();
 		});
 
-		p.then(function(data){
-			if(data){
+		p.then(function(data) {
+			if (data) {
 				res.locals.groups = data;
 			}
-			if(req.method == "POST"){
+			if (req.method == "POST") {
 				var data = req.body;
-				if(data.password){
+				if (data.password) {
 					var md5 = crypto.createHash('md5');
 					md5.update(data.password || "");
 					var passwordHash = md5.digest("hex");
 					data.password = passwordHash;
-				}else{
+				} else {
 					delete data.password;
 				}
-				var now = Math.floor((new Date().getTime())/1000);
+				var now = Math.floor((new Date().getTime()) / 1000);
 				data.updatetime = now;
-				User.update({id:id},data).exec(function(error,data){
-					if(error) return next(error);
-					req.session.flash = {succ:"添加成功!"}
-					return res.json({result:true,data:null,msg:null});
+				User.update({
+					id: id
+				}, data).exec(function(error, data) {
+					if (error) return next(error);
+					req.session.flash = {
+						succ: "添加成功!"
+					}
+					return res.json({
+						result: true,
+						data: null,
+						msg: null
+					});
 				});
-			}else{
+			} else {
 				return res.view();
 			}
 		});
 
-		p.catch(function(error){
+		p.catch(function(error) {
 			return next(error);
 		});
 	},

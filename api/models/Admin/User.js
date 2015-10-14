@@ -1,10 +1,6 @@
 /**
  * Admin/login.js
- *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/#!documentation/models
  */
-
 module.exports = {
 	tableName: 'user',
 	autoCreatedAt: false,
@@ -18,7 +14,8 @@ module.exports = {
 		},
 		usergroup: {
 			type: 'integer',
-			columnName: 'usergroup'
+			columnName: 'usergroup',
+            model: 'Groups'
 		},
 		username: {
 			unique: true,
@@ -28,10 +25,6 @@ module.exports = {
 		password: {
 			type: 'string',
 			columnName: 'password'
-		},
-		salt: {
-			type: 'string',
-			columnName: 'salt'
 		},
 		email: {
 			type: 'email',

@@ -29,7 +29,6 @@ module.exports.policies = {
     'Admin/UserController': {
         "login":['flash']
     },
-    // '*': ['flash','helper']
     '*': ['flash', 'sessionAuth','helper']
     
     /***************************************************************************

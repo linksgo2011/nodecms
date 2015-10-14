@@ -7,7 +7,7 @@
         <!-- Bootstrap 3.3.4 -->
         <link href="/admin_lte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- Font Awesome Icons -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/lib/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="/admin_lte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
         <!-- iCheck -->
@@ -22,19 +22,18 @@
     <body class="login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="/admin_lte/index2.html"><b>NodeCms</b>login</a>
-                </div><!-- /.login-logo -->
+                <a href=""><b>NodeCms</b>login</a>
+                </div>
                 <div class="login-box-body">
-                    <p class="login-box-msg"> 
+                    <p class="login-box-msg">
                         <% if(flash && flash.error){%>
-                            <span class="text-yellow"><%-flash.error%>  </span>
-                         <%}else if(flash.succ){%>
-                            <span class="text-red"><%-flash.succ%>  </span>
-                        <%}else{%>  
-                            <%-'开始管理的你的站点!'%> 
-                         <%}%> 
+                        <span class="text-yellow"><%-flash.error%>  </span>
+                        <%}else if(flash.succ){%>
+                        <span class="text-red"><%-flash.succ%>  </span>
+                        <%}else{%>
+                        <%-'开始管理的你的站点!'%>
+                        <%}%>
                     </p>
-
                     <form  method="post">
                         <div class="form-group has-feedback">
                             <input type="input" name="username" class="form-control" placeholder="账号"/>
@@ -51,28 +50,28 @@
                                         <input type="checkbox"> 记住我
                                     </label>
                                 </div>
-                                </div><!-- /.col -->
-                                <div class="col-xs-4">
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat">登 陆</button>
-                                    </div><!-- /.col -->
-                                </div>
-                            </form>
-                </div><!-- /.login-box-body -->
-        </div><!-- /.login-box -->
-                                <!-- jQuery 2.1.4 -->
-                                <script src="/admin_lte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-                                <!-- Bootstrap 3.3.2 JS -->
-                                <script src="/admin_lte/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-                                <!-- iCheck -->
-                                <script src="/admin_lte/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-                                <script>
-                                $(function () {
-                                $('input').iCheck({
-                                        checkboxClass: 'icheckbox_square-blue',
-                                        radioClass: 'iradio_square-blue',
-                                        increaseArea: '20%' // optional
-                                    });
-                                });
-                                </script>
-                            </body>
-                        </html>
+                            </div>
+                            <div class="col-xs-4">
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">登 陆</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- jQuery 2.1.4 -->
+            <script src="/admin_lte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+            <!-- Bootstrap 3.3.2 JS -->
+            <script src="/admin_lte/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+            <!-- iCheck -->
+            <script src="/admin_lte/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+            <script>
+            $(function () {
+                $('input').iCheck({
+                        checkboxClass: 'icheckbox_square-blue',
+                        radioClass: 'iradio_square-blue',
+                        increaseArea: '20%' // optional
+                    });
+                });
+            </script>
+        </body>
+    </html>

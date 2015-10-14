@@ -1,8 +1,9 @@
+var Promise = require('es6-promise').Promise;
+
 module.exports = {
     index: function(req, res, next){
         var category = req.param("id");
         var current_category = null;
-
         Promise.resolve().then(function(){
             if(category){
                 return Category.findOne({dir:category,model:"product"});

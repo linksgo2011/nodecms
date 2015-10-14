@@ -1,3 +1,5 @@
+var Promise = require('es6-promise').Promise;
+
 module.exports = {
     index: function(req, res, next){
         var category = req.param("id");

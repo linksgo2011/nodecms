@@ -104,7 +104,7 @@ module.exports = {
 	/**
 	 * ajax 分配权限
 	 */
-	d_purview:function(req, res, next){
+	d_grant:function(req, res, next){
 
 		function  getKeys(obj){
 			if(obj === "false"){

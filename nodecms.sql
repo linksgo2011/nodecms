@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2015-08-14 11:32:37
+Date: 2015-10-14 11:30:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -193,14 +193,14 @@ CREATE TABLE `config` (
 -- ----------------------------
 -- Records of config
 -- ----------------------------
-INSERT INTO `config` VALUES ('1', 'site_name', '', 'base', '小六网络科技', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('2', 'site_title', '', 'base', 'X6CMS是一个功能完善的营销型网站内容管理平台', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('3', 'site_keywords', '', 'base', 'X6CMS,网站管理系统', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('4', 'site_description', '', 'base', '网站简介试试看看啊', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('5', 'site_code', '', 'base', 'INSERT INTO `ang` VALUES (\'1\', \'简体中文\', \'zh_cn\', \'data/language/zh_cn/zh_cn.gif\', \'1\', \'1\');\r\nINSERT INTO `ang` VALUES (\'2\', \'English\', \'en\', \'data/language/en/en.gif\', \'2\', \'1\');', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('6', 'site_logo', '', 'base', 'images/logo.png', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('7', 'site_template', '', 'base', 'default', '1', 'zh_cn');
-INSERT INTO `config` VALUES ('8', 'site_beian', '备案号', 'base', '陕ICP1212', '0', 'zh_cn');
+INSERT INTO `config` VALUES ('1', 'site_name', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('2', 'site_title', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('3', 'site_keywords', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('4', 'site_description', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('5', 'site_code', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('6', 'site_logo', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('7', 'site_template', '', 'base', '', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('8', 'site_beian', '备案号', 'base', '', '0', 'zh_cn');
 INSERT INTO `config` VALUES ('9', 'site_name', '', 'base', 'Six network technology', '1', 'en');
 INSERT INTO `config` VALUES ('10', 'site_title', '', 'base', 'X6CMS is a function of a sound marketing website content management platform', '1', 'en');
 INSERT INTO `config` VALUES ('11', 'site_keywords', '', 'base', 'X6CMS, website management system', '1', 'en');
@@ -214,7 +214,7 @@ INSERT INTO `config` VALUES ('32', 'attr_maxsize', '', 'attr', '200', '1', '0');
 INSERT INTO `config` VALUES ('21', 'site_adminlang', '', 'lang', 'en', '1', '0');
 INSERT INTO `config` VALUES ('22', 'site_frontlang', '', 'lang', 'en', '1', '0');
 INSERT INTO `config` VALUES ('23', 'site_home', '', 'base', '', '1', 'en');
-INSERT INTO `config` VALUES ('25', 'site_home', '', 'base', 'home', '1', 'zh_cn');
+INSERT INTO `config` VALUES ('25', 'site_home', '', 'base', '', '1', 'zh_cn');
 INSERT INTO `config` VALUES ('26', 'smtp_host', '', 'mail', '12', '1', '0');
 INSERT INTO `config` VALUES ('27', 'smtp_user', '', 'mail', '12', '1', '0');
 INSERT INTO `config` VALUES ('28', 'smtp_pass', '', 'mail', '12', '1', '0');
@@ -630,7 +630,7 @@ CREATE TABLE `purview` (
 INSERT INTO `purview` VALUES ('1', '0', 'system', '', '5', '1');
 INSERT INTO `purview` VALUES ('2', '1', 'purview', 'add,edit,del,order', '1', '1');
 INSERT INTO `purview` VALUES ('3', '1', 'usergroup', 'add,edit,del,order,grant', '2', '1');
-INSERT INTO `purview` VALUES ('4', '1', 'user', 'add,edit,del', '3', '1');
+INSERT INTO `purview` VALUES ('4', '1', 'user', 'add,edit,del,password,profile', '3', '1');
 INSERT INTO `purview` VALUES ('5', '0', 'content', '', '2', '1');
 INSERT INTO `purview` VALUES ('6', '0', 'module', '', '4', '1');
 INSERT INTO `purview` VALUES ('7', '0', 'seo', '', '3', '1');
@@ -646,24 +646,14 @@ INSERT INTO `purview` VALUES ('23', '7', 'tags', 'add,edit,del,order', '1', '1')
 INSERT INTO `purview` VALUES ('24', '5', 'hr', 'add,edit,del,order', '6', '1');
 INSERT INTO `purview` VALUES ('25', '5', 'product', 'add,edit,del,order', '3', '1');
 INSERT INTO `purview` VALUES ('32', '0', 'personal', '', '1', '1');
-INSERT INTO `purview` VALUES ('28', '7', 'keywords', 'add,edit,del', '2', '1');
 INSERT INTO `purview` VALUES ('29', '7', 'robots', 'save,restore', '4', '1');
 INSERT INTO `purview` VALUES ('30', '7', 'htaccess', 'save,restore', '3', '1');
-INSERT INTO `purview` VALUES ('33', '32', 'adminindex', '', '1', '1');
-INSERT INTO `purview` VALUES ('34', '32', 'profile', 'save', '3', '1');
-INSERT INTO `purview` VALUES ('35', '32', 'propass', 'save', '2', '1');
+INSERT INTO `purview` VALUES ('33', '32', 'main', '', '1', '1');
 INSERT INTO `purview` VALUES ('36', '6', 'fragment', 'add,edit,del', '5', '1');
 INSERT INTO `purview` VALUES ('37', '1', 'clearcache', '', '12', '1');
 INSERT INTO `purview` VALUES ('38', '6', 'online', 'add,edit,del,order', '4', '1');
 INSERT INTO `purview` VALUES ('39', '5', 'down', 'add,edit,del,order', '5', '1');
-INSERT INTO `purview` VALUES ('40', '1', 'database', 'backup,download,upgrade,optimize,del', '10', '1');
 INSERT INTO `purview` VALUES ('41', '5', 'guestbook', 'add,edit,del,order', '7', '1');
-INSERT INTO `purview` VALUES ('42', '1', 'template', 'edit', '11', '1');
-INSERT INTO `purview` VALUES ('43', '7', 'sitemap', 'generate,download,del', '5', '1');
-INSERT INTO `purview` VALUES ('51', '1', 'lang', 'add,edit,del,order', '9', '1');
-INSERT INTO `purview` VALUES ('52', '5', 'model', 'add,edit,del,order', '9', '1');
-INSERT INTO `purview` VALUES ('53', '5', 'recommend', 'add,edit,del', '8', '1');
-INSERT INTO `purview` VALUES ('54', '1', 'tpltags', '', '7', '1');
 
 -- ----------------------------
 -- Table structure for recommend
@@ -709,7 +699,7 @@ CREATE TABLE `slide` (
   PRIMARY KEY (`id`),
   KEY `category` (`type`),
   KEY `lang` (`lang`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of slide
@@ -717,7 +707,6 @@ CREATE TABLE `slide` (
 INSERT INTO `slide` VALUES ('1', '2', 'X6CMS 2.2 正式发布！', 'X6CMS 2.2 正式发布！', '/uploads/2015-08-11/647690575181.jpg', 'http://www.x6cms.com', '', '0', '1358671121', '1', '1', 'zh_cn');
 INSERT INTO `slide` VALUES ('2', '2', 'X6CMS 2.2 正式发布！', 'X6CMS 2.2 正式发布！', '/uploads/2015-08-11/647690575181.jpg', 'http://www.x6cms.com', '', '0', '1358666593', '2', '1', 'zh_cn');
 INSERT INTO `slide` VALUES ('3', '2', 'X6CMS 2.2 正式发布！', 'X6CMS 2.2 正式发布！', '/uploads/2015-08-11/647690575181.jpg', 'http://www.x6cms.com', '', '0', '1358666596', '3', '1', 'zh_cn');
-INSERT INTO `slide` VALUES ('4', '2', 'X6CMS 2.2 正式发布！', 'X6CMS 2.2 正式发布！', '/uploads/2015-08-11/647690575181.jpg', 'http://www.x6cms.com', '', '0', '1358666600', '4', '1', 'zh_cn');
 
 -- ----------------------------
 -- Table structure for tags
@@ -820,7 +809,6 @@ CREATE TABLE `user` (
   `usergroup` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `username` varchar(50) NOT NULL,
   `password` char(32) NOT NULL,
-  `salt` char(6) NOT NULL DEFAULT '',
   `email` varchar(50) NOT NULL,
   `realname` varchar(50) NOT NULL,
   `sex` tinyint(1) unsigned NOT NULL DEFAULT '0',
@@ -842,9 +830,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'zEOIAA', 'admin@x6cms.com', '看起来不错', '1', '13668193903', '13668193903', '', 'Cheng Du', '1335922827', '1357439344', '1432267308', '127.0.0.1', '127.0.0.1', '304', '1');
-INSERT INTO `user` VALUES ('5', '6', 'x6cms', '21232f297a57a5a743894a0e4a801fc3', 'KPrXla', 'admin@x6cms.com', '小六', '0', '', '', '', '', '1361287120', '1361287120', '1361326962', '127.0.0.1', '127.0.0.1', '3', '1');
-INSERT INTO `user` VALUES ('7', '1', 'links', 'd5ea09801c73763c9737936164999eaf', '', '12031277843@qq.com', '林', '0', '13668', '1366', '', 'Cheng ', '1434373580', '1434374554', '1434373580', '::1', '::1', '0', '0');
+INSERT INTO `user` VALUES ('1', '1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '120377843@qq.com', '', '1', '', '13668193903', '', '', '1335922827', '1357439344', '1432267308', '127.0.0.1', '127.0.0.1', '304', '1');
+INSERT INTO `user` VALUES ('7', '6', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', '12031277843@qq.com', '编辑', '1', '13668', '1366', '', 'Cheng ', '1434373580', '1444793170', '1434373580', '::1', '::1', '0', '1');
 
 -- ----------------------------
 -- Table structure for usergroup
@@ -863,5 +850,5 @@ CREATE TABLE `usergroup` (
 -- ----------------------------
 -- Records of usergroup
 -- ----------------------------
-INSERT INTO `usergroup` VALUES ('1', 'superadmin', '1', '{\"system\":{\"has\":\"1\",\"id\":\"1\",\"class\":\"system\",\"method\":false},\"purview\":{\"has\":\"1\",\"id\":\"2\",\"class\":\"purview\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"usergroup\":{\"has\":\"1\",\"id\":\"3\",\"class\":\"usergroup\",\"method\":[\"add\",\"edit\",\"del\",\"order\",\"grant\"]},\"user\":{\"has\":\"1\",\"id\":\"4\",\"class\":\"user\",\"method\":[\"add\",\"edit\",\"del\"]},\"config\":{\"has\":\"1\",\"id\":\"19\",\"class\":\"config\",\"method\":[\"add\",\"base\",\"lang\",\"mail\",\"attr\",\"del\"]},\"clearcache\":{\"has\":\"1\",\"id\":\"37\",\"class\":\"clearcache\",\"method\":false},\"database\":{\"has\":\"1\",\"id\":\"40\",\"class\":\"database\",\"method\":[\"backup\",\"download\",\"upgrade\",\"optimize\",\"del\"]},\"template\":{\"has\":\"1\",\"id\":\"42\",\"class\":\"template\",\"method\":[\"edit\"]},\"lang\":{\"has\":\"1\",\"id\":\"51\",\"class\":\"lang\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"tpltags\":{\"has\":\"1\",\"id\":\"54\",\"class\":\"tpltags\",\"method\":false},\"content\":{\"has\":\"1\",\"id\":\"5\",\"class\":\"content\",\"method\":false},\"article\":{\"has\":\"1\",\"id\":\"11\",\"class\":\"article\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"ask\":{\"has\":\"1\",\"id\":\"14\",\"class\":\"ask\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"category\":{\"has\":\"1\",\"id\":\"21\",\"class\":\"category\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"hr\":{\"has\":\"1\",\"id\":\"24\",\"class\":\"hr\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"product\":{\"has\":\"1\",\"id\":\"25\",\"class\":\"product\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"down\":{\"has\":\"1\",\"id\":\"39\",\"class\":\"down\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"guestbook\":{\"has\":\"1\",\"id\":\"41\",\"class\":\"guestbook\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"model\":{\"has\":\"1\",\"id\":\"52\",\"class\":\"model\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"recommend\":{\"has\":\"1\",\"id\":\"53\",\"class\":\"recommend\",\"method\":[\"add\",\"edit\",\"del\"]},\"module\":{\"has\":\"1\",\"id\":\"6\",\"class\":\"module\",\"method\":false},\"type\":{\"has\":\"1\",\"id\":\"20\",\"class\":\"type\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"link\":{\"has\":\"1\",\"id\":\"9\",\"class\":\"link\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"slide\":{\"has\":\"1\",\"id\":\"15\",\"class\":\"slide\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"navigation\":{\"has\":\"1\",\"id\":\"22\",\"class\":\"navigation\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"fragment\":{\"has\":\"1\",\"id\":\"36\",\"class\":\"fragment\",\"method\":[\"add\",\"edit\",\"del\"]},\"online\":{\"has\":\"1\",\"id\":\"38\",\"class\":\"online\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"seo\":{\"has\":\"1\",\"id\":\"7\",\"class\":\"seo\",\"method\":false},\"tags\":{\"has\":\"1\",\"id\":\"23\",\"class\":\"tags\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"keywords\":{\"has\":\"1\",\"id\":\"28\",\"class\":\"keywords\",\"method\":[\"add\",\"edit\",\"del\"]},\"robots\":{\"has\":\"1\",\"id\":\"29\",\"class\":\"robots\",\"method\":[\"save\",\"restore\"]},\"htaccess\":{\"has\":\"1\",\"id\":\"30\",\"class\":\"htaccess\",\"method\":[\"save\",\"restore\"]},\"sitemap\":{\"has\":\"1\",\"id\":\"43\",\"class\":\"sitemap\"},\"personal\":{\"has\":\"1\",\"id\":\"32\",\"class\":\"personal\",\"method\":false},\"adminindex\":{\"has\":\"1\",\"id\":\"33\",\"class\":\"adminindex\",\"method\":false},\"profile\":{\"has\":\"1\",\"id\":\"34\",\"class\":\"profile\",\"method\":[\"save\"]}}', '0', '1');
+INSERT INTO `usergroup` VALUES ('1', 'superadmin', '1', '{\"system\":{\"has\":\"1\",\"id\":\"1\",\"class\":\"system\",\"method\":false},\"purview\":{\"has\":\"1\",\"id\":\"2\",\"class\":\"purview\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"usergroup\":{\"has\":\"1\",\"id\":\"3\",\"class\":\"usergroup\",\"method\":[\"add\",\"edit\",\"del\",\"order\",\"grant\"]},\"user\":{\"has\":\"1\",\"id\":\"4\",\"class\":\"user\",\"method\":[\"add\",\"edit\",\"del\",\"password\",\"profile\"]},\"config\":{\"has\":\"1\",\"id\":\"19\",\"class\":\"config\",\"method\":[\"add\",\"base\",\"lang\",\"mail\",\"attr\",\"del\"]},\"clearcache\":{\"has\":\"1\",\"id\":\"37\",\"class\":\"clearcache\",\"method\":false},\"database\":{\"has\":\"1\",\"id\":\"40\",\"class\":\"database\",\"method\":[\"backup\",\"download\",\"upgrade\",\"optimize\",\"del\"]},\"template\":{\"has\":\"1\",\"id\":\"42\",\"class\":\"template\",\"method\":[\"edit\"]},\"lang\":{\"has\":\"1\",\"id\":\"51\",\"class\":\"lang\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"tpltags\":{\"has\":\"1\",\"id\":\"54\",\"class\":\"tpltags\",\"method\":false},\"content\":{\"has\":\"1\",\"id\":\"5\",\"class\":\"content\",\"method\":false},\"article\":{\"has\":\"1\",\"id\":\"11\",\"class\":\"article\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"ask\":{\"has\":\"1\",\"id\":\"14\",\"class\":\"ask\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"category\":{\"has\":\"1\",\"id\":\"21\",\"class\":\"category\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"hr\":{\"has\":\"1\",\"id\":\"24\",\"class\":\"hr\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"product\":{\"has\":\"1\",\"id\":\"25\",\"class\":\"product\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"down\":{\"has\":\"1\",\"id\":\"39\",\"class\":\"down\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"guestbook\":{\"has\":\"1\",\"id\":\"41\",\"class\":\"guestbook\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"model\":{\"has\":\"1\",\"id\":\"52\",\"class\":\"model\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"recommend\":{\"has\":\"1\",\"id\":\"53\",\"class\":\"recommend\",\"method\":[\"add\",\"edit\",\"del\"]},\"module\":{\"has\":\"1\",\"id\":\"6\",\"class\":\"module\",\"method\":false},\"type\":{\"has\":\"1\",\"id\":\"20\",\"class\":\"type\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"link\":{\"has\":\"1\",\"id\":\"9\",\"class\":\"link\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"slide\":{\"has\":\"1\",\"id\":\"15\",\"class\":\"slide\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"navigation\":{\"has\":\"1\",\"id\":\"22\",\"class\":\"navigation\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"fragment\":{\"has\":\"1\",\"id\":\"36\",\"class\":\"fragment\",\"method\":[\"add\",\"edit\",\"del\"]},\"online\":{\"has\":\"1\",\"id\":\"38\",\"class\":\"online\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"seo\":{\"has\":\"1\",\"id\":\"7\",\"class\":\"seo\",\"method\":false},\"tags\":{\"has\":\"1\",\"id\":\"23\",\"class\":\"tags\",\"method\":[\"add\",\"edit\",\"del\",\"order\"]},\"keywords\":{\"has\":\"1\",\"id\":\"28\",\"class\":\"keywords\",\"method\":[\"add\",\"edit\",\"del\"]},\"robots\":{\"has\":\"1\",\"id\":\"29\",\"class\":\"robots\",\"method\":[\"save\",\"restore\"]},\"htaccess\":{\"has\":\"1\",\"id\":\"30\",\"class\":\"htaccess\",\"method\":[\"save\",\"restore\"]},\"sitemap\":{\"has\":\"1\",\"id\":\"43\",\"class\":\"sitemap\"},\"personal\":{\"has\":\"1\",\"id\":\"32\",\"class\":\"personal\",\"method\":false},\"main\":{\"has\":\"1\",\"id\":\"33\",\"class\":\"main\",\"method\":false},\"profile\":{\"has\":\"1\",\"id\":\"34\",\"class\":\"profile\",\"method\":[\"save\"]},\"propass\":{\"has\":\"1\",\"id\":\"35\",\"class\":\"propass\",\"method\":[\"save\"]}}', '0', '1');
 INSERT INTO `usergroup` VALUES ('6', 'generaladmin', '2', '{\"personal\":{\"id\":\"32\",\"class\":\"personal\",\"method\":false},\"adminindex\":{\"id\":\"33\",\"class\":\"adminindex\",\"method\":false},\"tags\":{\"id\":\"23\",\"class\":\"tags\",\"method\":false},\"category\":{\"id\":\"21\",\"class\":\"category\",\"method\":false},\"slide\":{\"id\":\"15\",\"class\":\"slide\",\"method\":false},\"purview\":{\"id\":\"2\",\"class\":\"purview\",\"method\":false},\"propass\":{\"id\":\"35\",\"class\":\"propass\",\"method\":false},\"keywords\":{\"id\":\"28\",\"class\":\"keywords\",\"method\":false},\"usergroup\":{\"id\":\"3\",\"class\":\"usergroup\",\"method\":false},\"content\":{\"id\":\"5\",\"class\":\"content\",\"method\":false},\"article\":{\"id\":\"11\",\"class\":\"article\",\"method\":false},\"link\":{\"id\":\"9\",\"class\":\"link\",\"method\":false},\"profile\":{\"id\":\"34\",\"class\":\"profile\",\"method\":false},\"user\":{\"id\":\"4\",\"class\":\"user\",\"method\":false},\"navigation\":{\"id\":\"22\",\"class\":\"navigation\",\"method\":false},\"seo\":{\"id\":\"7\",\"class\":\"seo\",\"method\":false},\"product\":{\"id\":\"25\",\"class\":\"product\",\"method\":false},\"htaccess\":{\"id\":\"30\",\"class\":\"htaccess\",\"method\":false},\"ask\":{\"id\":\"14\",\"class\":\"ask\",\"method\":false},\"robots\":{\"id\":\"29\",\"class\":\"robots\",\"method\":false},\"module\":{\"id\":\"6\",\"class\":\"module\",\"method\":false},\"online\":{\"id\":\"38\",\"class\":\"online\",\"method\":false},\"sitemap\":{\"id\":\"43\",\"class\":\"sitemap\",\"method\":false},\"down\":{\"id\":\"39\",\"class\":\"down\",\"method\":false},\"fragment\":{\"id\":\"36\",\"class\":\"fragment\",\"method\":false},\"system\":{\"id\":\"1\",\"class\":\"system\",\"method\":false},\"type\":{\"id\":\"20\",\"class\":\"type\",\"method\":false},\"hr\":{\"id\":\"24\",\"class\":\"hr\",\"method\":false},\"config\":{\"id\":\"19\",\"class\":\"config\",\"method\":false},\"tpltags\":{\"id\":\"54\",\"class\":\"tpltags\",\"method\":false},\"guestbook\":{\"id\":\"41\",\"class\":\"guestbook\",\"method\":false},\"recommend\":{\"id\":\"53\",\"class\":\"recommend\",\"method\":false},\"lang\":{\"id\":\"51\",\"class\":\"lang\",\"method\":false},\"model\":{\"id\":\"52\",\"class\":\"model\",\"method\":false},\"database\":{\"id\":\"40\",\"class\":\"database\",\"method\":false},\"template\":{\"id\":\"42\",\"class\":\"template\",\"method\":false},\"clearcache\":{\"id\":\"37\",\"class\":\"clearcache\",\"method\":false}}', '0', '1');

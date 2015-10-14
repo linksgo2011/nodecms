@@ -15,7 +15,7 @@
                     <div class="col-sm-12">
                         <div class="row clearfix">
                             <div class="col-sm-12">
-                                <button href="/admin/groups/d_add" class="btn  btn-primary btn-form">添加用户组</button>
+                                <button href="/admin/usergroup/d_add" class="btn  btn-primary btn-form">添加用户组</button>
                             </div>
                         </div>
                         <hr>
@@ -39,9 +39,9 @@
                                     <td><%=one.varname%></td>
                                     <td><%=__("status_"+one.status)%></td>
                                     <td>
-                                        <a class="btn-form" href="/admin/groups/d_update/<%=one.id%>">编辑</a>
-                                        <a class="btn-form" href="/admin/groups/d_purview/<%=one.id%>">权限</a>
-                                        <a href="/admin/groups/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
+                                        <a class="btn-form" href="/admin/usergroup/d_update/<%=one.id%>">编辑</a>
+                                        <a class="btn-form" href="/admin/usergroup/d_grant/<%=one.id%>">权限</a>
+                                        <a href="/admin/usergroup/delete/<%=one.id%>" onclick="if(!confirm('删除后不可恢复,确定删除纪录吗?'))return false;">删除</a>
                                     </td>
                                 </tr>
                                 <%})%>

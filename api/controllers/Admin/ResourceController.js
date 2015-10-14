@@ -19,7 +19,6 @@ module.exports = {
 
     // 文件上传插件
     index: function(req, res, next) {
-        res.setHeader("Content-Type","text/html; charset=utf-8")
         req.file('imgFile').upload({
             // don't allow the total upload size to exceed ~10MB
             maxBytes: 10000000
