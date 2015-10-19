@@ -67,6 +67,7 @@
                                 <label class="col-sm-4 control-label">图片</label>
                                 <div class="col-sm-8">
                                     <input type="input" class="form-control" id="thumb" name="thumb" placeholder="图片" value="<%-product.thumb%>">
+                                    <a href="javascript:void(0)" class="btn btn-upload" id="upload_input">点击上传</a>
                                 </div>
                             </div>
                         </div>
@@ -78,9 +79,9 @@
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">发布时间</label>
+                                <label class="col-sm-4 control-label">发布日期</label>
                                 <div class="col-sm-8">
-                                    <input type="input" class="form-control datepicker" id="puttime" name="puttime" placeholder="发布时间" value="<%-product.puttime%>">
+                                    <input type="input" class="form-control datepicker" id="puttime" name="puttime" placeholder="发布日期" value="<%-dateFormat(product.puttime)%>">
                                 </div>
                             </div>
                         </div>
@@ -204,4 +205,6 @@
         });
     })
 </script>
+<script src="/js/ajaxupload.js" type="text/javascript"></script>
+<script src="/js/upload.js" type="text/javascript"></script>
 <% include ../footer.ejs %>

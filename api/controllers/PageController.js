@@ -1,7 +1,7 @@
 module.exports = {
-    index: function(req, res, next){
+    index: function(req, res, next) {
         var category = req.param("id");
-        if(!category){
+        if (!category) {
             return res.notFound();
         }
         res.locals.currentMenu = category;

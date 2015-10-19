@@ -75,17 +75,17 @@
             <header class="grid col-full">
                 <hr>
                 <p class="fleft">我们的作品</p>
-                <a href="/page/index/works" class="arrow fright">see more works</a>
+                <a href="/index/product" class="arrow fright">see more works</a>
             </header>
         
             <%products.forEach(function(one,key){%>
             <figure class="grid col-one-quarter mq2-col-one-half">
-                <a href="/product/detail/<%=one.id%>">
+                <a href="/index/product/<%=one.id%>">
                     <img src="<%-one.thumb%>" alt="">
                     <span class="zoom"></span>
                 </a>
                 <figcaption>
-                <a href="/product/detail/<%=one.id%>" class="arrow"><%=one.title%></a>
+                <a href="/index/product/<%=one.id%>" class="arrow"><%=one.title%></a>
                 <p><%-one.description%></p>
                 </figcaption>
             </figure>

@@ -61,6 +61,7 @@
                                 <label class="col-sm-4 control-label">缩略图</label>
                                 <div class="col-sm-8">
                                     <input type="input" class="form-control" id="thumb" name="thumb" placeholder="图片" value="<%-link.thumb%>">
+                                    <a href="javascript:void(0)" class="btn btn-upload" id="upload_input">点击上传</a>
                                 </div>
                             </div>
                         </div>
@@ -104,4 +105,8 @@
         </div>
     </div>
 </div>
+
+<script src="/js/ajaxupload.js" type="text/javascript"></script>
+<script src="/js/upload.js" type="text/javascript"></script>
+
 <% include ../footer.ejs %>

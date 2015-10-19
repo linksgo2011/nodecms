@@ -5,7 +5,8 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "es6-promise": "^3.0.2"
+    "es6-promise": "^3.0.2",
+    "moment": "^2.10.6"
   },
   "scripts": {
     "debug": "node debug app.js",

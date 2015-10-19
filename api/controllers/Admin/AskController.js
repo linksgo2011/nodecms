@@ -46,6 +46,8 @@ module.exports = {
 
             if (req.method == "POST") {
                 req.body.lang = "zh_cn";
+                req.body.puttime = Util.unix(req.body.puttime);
+
                 Ask.create(req.body).then(function(records) {
                     req.session.flash = {
                         succ: "添加成功!"
@@ -98,6 +100,8 @@ module.exports = {
 
             if (req.method == "POST") {
                 req.body.lang = "zh_cn";
+                req.body.puttime = Util.unix(req.body.puttime);
+                
                 Ask.update({id:id},req.body).then(function(records) {
                     req.session.flash = {
                         succ: "更新成功!"

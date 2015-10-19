@@ -16,45 +16,17 @@
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">外部链接</label>
+                                <label class="col-sm-4 control-label">栏目别名</label>
                                 <div class="col-sm-8">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isexternal" value="1" <%if(category.isexternal == "1" || !category.isexternal){%> checked=""  <%}%> >
-                                        是
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isexternal" value="0" <%if(category.isexternal == "0"){%> checked=""  <%}%>>
-                                        否
-                                    </label>
+                                    <input type="input" class="form-control" id="dir" name="dir" placeholder="栏目别名" value="<%-category.dir%>">
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">栏目目录</label>
-                                <div class="col-sm-8">
-                                    <input type="input" class="form-control" id="dir" name="dir" placeholder="栏目目录" value="<%-category.dir%>">
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">弹出方式</label>
-                                <div class="col-sm-8">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="target" value="_self" <%if(category.target == "_self" || !category.target){%> checked=""  <%}%> >
-                                        是
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="target" value="_blank" <%if(category.target == "_blank"){%> checked=""  <%}%>>
-                                        否
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 <label class="col-sm-4 control-label">栏目模型</label>
                                 <div class="col-sm-8">
+                                    <!-- todo 从数据库取出 -->
                                     <select name="model" id="model" class="form-control">
                                         <%models.forEach(function(one, key) {%>
                                             <option value="<%-one.varname%>" <% if(category.model == one.varname){ %> selected <%}%> > <%=__("model_"+one.varname)%></option>
@@ -64,44 +36,18 @@
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="col-sm-4 control-label">上级栏目</label>
+                                <div class="col-sm-8">
+                                    <!-- todo 从数据库取出 -->
                                     <select name="parent" id="parent" class="form-control">
                                         <option value="0">顶级栏目</option>
                                         <%categorys.forEach(function(one, key) {%>
                                             <option value="<%-one.id%>" <% if(category.parent == one.id){ %> selected <%}%> > <%=spaceX(one.deep)%><%=one.name%></option>
                                         <%})%>
                                     </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">导航显示</label>
-                                <div class="col-sm-8">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isnavigation" value="1" <%if(category.isnavigation == "1" || !category.isnavigation){%> checked=""  <%}%> >
-                                        是
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isnavigation" value="0" <%if(category.isnavigation == "0"){%> checked=""  <%}%>>
-                                        否
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="col-sm-4 control-label">允许添加内容</label>
-                                <div class="col-sm-8">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isdisabled" value="1" <%if(category.isdisabled == "1" || !category.isdisabled){%> checked=""  <%}%> >
-                                        是
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="isdisabled" value="0" <%if(category.isdisabled == "0"){%> checked=""  <%}%>>
-                                        否
-                                    </label>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 <label class="col-sm-4 control-label">SEO标题</label>

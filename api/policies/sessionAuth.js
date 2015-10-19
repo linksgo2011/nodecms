@@ -17,7 +17,7 @@ module.exports = function(req, res, next) {
             var action = req.options.action;
             purview = JSON.parse(purview);
             var purview_item = purview[controller];
-            if (!purview_item) {
+            if (!purview_item && ['resource'].indexOf(controller) == -1) {
                 req.session.flash = {
                     error: "没有权限进行此操作，请更换账号继续 !"
                 };

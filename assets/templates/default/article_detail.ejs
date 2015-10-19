@@ -34,18 +34,17 @@
         <div class="widget">
         <h2>热点文章</h2>
         <ul>
-            <%pop_articles.forEach(function(one,key){%>
-                <li><a href="/news/detail/<%-one.id%>" title=""><%=one.title%></a></li>   
+            <%hot_records.forEach(function(one,key){%>
+                <li><a href="/index/<%=currentMenu%>/<%-one.id%>" title=""><%=one.title%></a></li>   
             <%});%>
         </ul>
         </div>
-        
-        <div class="widget">                                            
+            
+        <div class="widget">                                             
         <h2>分类</h2>
         <ul>
-            <li><a href="/news/index" class="<%if(!category){%>buttonactive <%}%>">全部</a><br></li>
             <%categorys.forEach(function(one,key){%>
-                <li><a href="/news/index/<%=one.dir%>"  class="<%if(category == one.dir){%>buttonactive<%}%>"><%=one.name%></a><br></li>
+                <li><a href="/index/<%=one.dir%>"  class="<%if(category == one.dir){%>buttonactive<%}%>"><%=one.name%></a><br></li>
             <%})%>
         </ul>
         </div>
