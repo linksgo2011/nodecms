@@ -15,14 +15,16 @@
 
 * 使用 克隆或直接下载项目到本地
     
-    git checkout https://github.com/linksgo2011/nodecms.git
+        git checkout https://github.com/linksgo2011/nodecms.git
 
 * 在根目录下使用命令行执行下面代码，安装nodejs 依赖的模块
+
         npm install 
 
 * 在根目录下找到nodecms.sql文件，导入到你的MySQL数据库中
 
 * 修改config/connections.js 文件,根据上一步的数据库信息，修改数据库连接
+
         // 修改数据库连接地址
         someMysqlServer: {
             host: 'localhost',
@@ -31,6 +33,7 @@
             database: 'nodecms'
         },
 * 启动项目 
+
         node app.js
 
 # 预览 
