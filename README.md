@@ -15,7 +15,7 @@
 
 * 使用 克隆或直接下载项目到本地
     
-        git checkout https://github.com/linksgo2011/nodecms.git
+        git clone https://github.com/linksgo2011/nodecms.git
 
 * 在根目录下使用命令行执行下面代码，安装nodejs 依赖的模块
 
