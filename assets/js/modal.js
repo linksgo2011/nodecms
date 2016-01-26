@@ -27,7 +27,7 @@
 	 * 创建弹出框
 	 */
 	function create(config) {
-		var ins {
+		var ins = {
 			parent: modal
 		};
 		var config = $.extend({
