@@ -1,0 +1,1 @@
+supervisor -i .tmp,view app.js
