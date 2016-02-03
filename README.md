@@ -38,7 +38,7 @@
 
 # 预览 
 
-demo 地址 http://nodecms.duapp.com/
+demo 地址 http://nodecms.printf.cn/
 
 后台地址 /admin/user/login  <br>
 默认用户 admin  admin
