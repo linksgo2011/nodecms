@@ -9,7 +9,7 @@
     "es6-promise": "^3.0.2",
     "moment": "^2.10.6",
     "sails": "^0.11.2",
-    "sails-mysql": "^0.11.1"
+    "sails-mysql": "^0.11.3"
   },
   "scripts": {
     "debug": "node debug app.js",
